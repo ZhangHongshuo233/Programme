@@ -1,0 +1,33 @@
+# C build artifacts
+*.o
+*.obj
+*.out
+*.exe
+*.dll
+*.so
+*.a
+*.lib
+
+# Debug symbols and profiling files
+*.pdb
+*.dSYM/
+*.gcda
+*.gcno
+*.gcov
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
