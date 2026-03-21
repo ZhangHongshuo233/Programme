@@ -100,10 +100,14 @@ int main(){
 
     int n;
     scanf("%d",&n);
+    getchar();
+
     for(int i=0;i<n;i++){
         char op;
         scanf("%c",&op);
-        if(op == "I"){
+        getchar(); 
+
+        if(op == 'I'){
             int val;
             scanf("%d",&val);
             Node* newNode = (Node*)malloc(sizeof(Node));
@@ -111,7 +115,7 @@ int main(){
             newNode->next = s1->top;
             s1->top = newNode;
             s1->clen++;
-        }else if(op == "O"){
+        }else if(op == 'O'){
             int time = 0;
             if(s2->clen == 0){
                 if(s1->clen == 0){
@@ -127,20 +131,23 @@ int main(){
                         s2->clen++;
                         time++;
                     }
-                    int val = s2->top->val;
-                    s2->top =s2->top->next;
+                    Node* temp = s2->top;
+                    int val = temp->val;
+                    s2->top = temp->next;
                     s2->clen--;
+                    free(temp);
                     time++;
                     printf("%d %d\n",val,time);
                 }
             }else if(s2->clen > 0){
-                int val = s2->top->val;
-                s2->top =s2->top->next;
+                Node* temp = s2->top;
+                int val = temp->val;
+                s2->top = temp->next;
                 s2->clen--;
+                free(temp);
                 time++;
                 printf("%d %d\n",val,time);
             }
-            time = 0;
         }
     }
     return 0;
