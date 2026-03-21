@@ -103,7 +103,7 @@ int main(){
 
     for(int i=0;i<n;i++){
         char op;
-        getchar(); 
+        getchar();      //this step is very important,!Otherwise the scanf("%c") will read the newline character left by previous scanf("%d") 
         scanf("%c",&op);
 
         if(op == 'I'){
