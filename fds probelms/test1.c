@@ -100,12 +100,11 @@ int main(){
 
     int n;
     scanf("%d",&n);
-    getchar();
 
     for(int i=0;i<n;i++){
         char op;
-        scanf("%c",&op);
         getchar(); 
+        scanf("%c",&op);
 
         if(op == 'I'){
             int val;
