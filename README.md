@@ -67,3 +67,7 @@ schtasks /Change /TN "ProgrammeGitAutoSync" /Disable
 schtasks /Change /TN "ProgrammeGitAutoSync" /Enable
 ```
 
+## 说明
+
+- 本仓库以学习记录为主，目录命名保持原始练习习惯。
+- 建议后续逐步补充每个子目录的题目说明与输入输出示例，方便复习和展示。
