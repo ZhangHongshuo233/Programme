@@ -3,6 +3,7 @@
 
 typedef struct data{
     int val;
+    int occupied; // 0 for empty, 1 for occupied, -1 for deleted    
 }datatype;
 
 typedef struct{
