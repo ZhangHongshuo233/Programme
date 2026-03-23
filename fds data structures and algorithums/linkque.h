@@ -18,9 +18,9 @@ typedef struct {
 }LinkQueue;
 
 LinkQueue* CreateLinkQueue();
-int isEmptyLinkQueue(LinkQueue *queue);
-int EnterLinkQueue(LinkQueue *queue, datatype *data);
-int QuitLinkQueue(LinkQueue *queue);
-datatype* GetHeadLinkQueue(LinkQueue *queue);
+int isEmpty(LinkQueue *queue);
+int Enter(LinkQueue *queue, datatype *data);
+int Quit(LinkQueue *queue);
+datatype* GetHead(LinkQueue *queue);
 int DestroyLinkQueue(LinkQueue *queue);
 #endif
