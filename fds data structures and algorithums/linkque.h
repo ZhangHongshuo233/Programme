@@ -22,5 +22,6 @@ int isEmpty(LinkQueue *queue);
 int Enter(LinkQueue *queue, datatype *data);
 int Quit(LinkQueue *queue);
 datatype* GetHead(LinkQueue *queue);
+int GetSize(LinkQueue *queue);
 int DestroyLinkQueue(LinkQueue *queue);
 #endif
