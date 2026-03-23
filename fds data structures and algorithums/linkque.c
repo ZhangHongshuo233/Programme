@@ -63,7 +63,7 @@ datatype* GetHead(LinkQueue* queue){
     return &queue->front->data;
 }
 
-int Getsize(LinkQueue* queue){
+int GetSize(LinkQueue* queue){
     if(queue == NULL){
         printf("Invalid input!\n");
         return -1;

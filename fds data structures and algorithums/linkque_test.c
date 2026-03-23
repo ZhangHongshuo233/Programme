@@ -12,15 +12,20 @@ int main(){
     strcpy(d2.name, "Bob");
     d3.val = 3;
     strcpy(d3.name, "Charlie");
+
     Enter(queue, &d1);
     Enter(queue, &d2);
     Enter(queue, &d3);
+
     printf("Queue size: %d\n", GetSize(queue));
+
     datatype* head = GetHead(queue);
     if(head != NULL){
         printf("Head of queue: %d, %s\n", head->val, head->name);
     }
+
     Quit(queue);
+    
     head = GetHead(queue);
     if(head != NULL){
         printf("Head of queue: %d, %s\n", head->val, head->name);
