@@ -1,8 +1,8 @@
 #ifndef HASHTABLE_H
 #define HASHTABLE_H
 
-typedef struct data{
-    int val;
+typedef struct datatype{
+    int val; 
     int occupied; // 0 for empty, 1 for occupied, -1 for deleted    
 }datatype;
 
@@ -13,9 +13,9 @@ typedef struct{
 }hs_table;
 
 hs_table* create_table(int tlen);
-int Insert(hs_table* table, int val);
-int Search(hs_table* table, int val);
-int Delete(hs_table* table, int val);
+int Insert(hs_table* table, datatype* data);
+int Search(hs_table* table, datatype* data);
+int Delete(hs_table* table, datatype* data);
 float LoadFactor(hs_table* table);
 int Resize(hs_table* table, int new_tlen);
 int Destroy(hs_table* table);
