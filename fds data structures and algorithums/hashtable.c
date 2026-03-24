@@ -94,25 +94,25 @@ int Search(hs_table* table, datatype* data){
     }
     int org_idx = idx;
     int probe_cnt = 0;
-    // Probe until we hit a never-used slot, or find an occupied slot with target value.
-    while(table->head[idx].occupied != 0 &&
-          !(table->head[idx].occupied == 1 && table->head[idx].val == data->val)){
+    while(1){
+        if(table->head[idx].occupied == 0){
+            printf("数据 %d 未找到(探测 %d 次)\n",
+                    data->val, probe_cnt);
+            return -1;
+        }
+        if(table->head[idx].occupied == 1 && table->head[idx].val == data->val){
+            printf("数据 %d 找到，所在下标 %d, 线性探测次数 %d\n",
+                    data->val, idx, probe_cnt);
+            return idx;
+        }
         probe_cnt++;
         idx = (idx + 1) % table->tlen;
         if(idx == org_idx){
-            printf("数据 %d 未找到(探测 %d 次)\n", 
+            printf("数据 %d 未找到(探测 %d 次)\n",
                     data->val, probe_cnt);
             return -1;
         }
     }
-    if(table->head[idx].occupied != 1 || table->head[idx].val != data->val){
-        printf("数据 %d 未找到(探测 %d 次)\n", 
-                data->val, probe_cnt);
-        return -1;
-    }
-    printf("数据 %d 找到，所在下标 %d, 线性探测次数 %d\n", 
-            data->val, idx, probe_cnt);
-    return idx;
 }
 
 int Delete(hs_table* table, datatype* data){
