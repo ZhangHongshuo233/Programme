@@ -90,7 +90,7 @@ int Search(hs_table* table, datatype* data){
     }
     int org_idx = idx;
     int probe_cnt = 0;
-    while(table->head[idx] != *data){
+    while(table->head[idx].occupied != 0 && table->head[idx].val != data->val){
         probe_cnt++;
         idx = (idx + 1) % table->tlen;
         if(idx == org_idx){
@@ -102,4 +102,44 @@ int Search(hs_table* table, datatype* data){
     printf("数据 %d 找到，所在下标 %d, 线性探测次数 %d\n", 
             data->val, idx, probe_cnt);
     return idx;
+}
+
+int Delete(hs_table* table, datatype* data){
+    if(table == NULL || data == NULL){
+        printf("Invalid input.\n");
+        return -1;
+    }
+    int idx = Search(table, data);
+    if(idx < 0){
+        printf("数据 %d 删除失败，未找到。\n", data->val);
+        return -1;
+    }
+    table->head[idx].occupied = -1;
+    table->cnt--;
+    printf("数据 %d 删除成功，删除下标 %d\n", data->val, idx);
+    return 0;
+}
+
+int Resize(hs_table* table, int new_tlen){
+    if(table == NULL || new_tlen <= table->cnt){
+        printf("扩容参数无效（新长度需大于原长度）\n");
+        return -1; 
+    }
+    hs_table* new_table = Create(new_tlen);
+    if(new_table == NULL){
+        printf("Failed to create new hash table for resizing.\n");
+        return -1;
+    }
+    for(int i = 0; i < table->tlen; i++){
+        // Only rehash occupied slots
+        if(table->head[i].occupied == 1){
+            Insert(new_table, &table->head[i]);
+        }
+    }
+    free(table->head);
+    table->head = new_table->head;
+    table->tlen = new_table->tlen;
+    free(new_table);
+    printf("Hash table resized to new length %d\n", new_tlen);
+    return 0;
 }
