@@ -3,7 +3,11 @@
 #include <string.h>
 #include "hashtable.h"
 
-hs_table* Create(int len){  //tlen be prime number to reduce collisions
+hs_table* CreateTable(int len){  //tlen be prime number to reduce collisions
+    if(len <= 0){
+        printf("Invalid table length.\n");
+        return NULL;
+    }
     hs_table* table = (hs_table*)malloc(sizeof(hs_table));
     if(table == NULL){
         printf("Memory allocation failed.\n");
@@ -90,7 +94,9 @@ int Search(hs_table* table, datatype* data){
     }
     int org_idx = idx;
     int probe_cnt = 0;
-    while(table->head[idx].occupied != 0 && table->head[idx].val != data->val){
+    // Probe until we hit a never-used slot, or find an occupied slot with target value.
+    while(table->head[idx].occupied != 0 &&
+          !(table->head[idx].occupied == 1 && table->head[idx].val == data->val)){
         probe_cnt++;
         idx = (idx + 1) % table->tlen;
         if(idx == org_idx){
@@ -98,6 +104,11 @@ int Search(hs_table* table, datatype* data){
                     data->val, probe_cnt);
             return -1;
         }
+    }
+    if(table->head[idx].occupied != 1 || table->head[idx].val != data->val){
+        printf("数据 %d 未找到(探测 %d 次)\n", 
+                data->val, probe_cnt);
+        return -1;
     }
     printf("数据 %d 找到，所在下标 %d, 线性探测次数 %d\n", 
             data->val, idx, probe_cnt);
@@ -140,6 +151,7 @@ int Resize(hs_table* table, int new_tlen){
     table->head = new_table->head;
     table->tlen = new_table->tlen;
     free(new_table);
-    printf("Hash table resized to new length %d\n", new_tlen);
+    printf("Hash table resized to new length %d, LoadFactor: %.2f\n", 
+            new_tlen, LoadFactor(table));
     return 0;
 }
