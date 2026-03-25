@@ -83,7 +83,7 @@ int Insert(hs_table* table, datatype* data){
     return 0;
 }
 
-int Search(hs_table* table, datatype* data){
+int Search(hs_table* table, datatype* data){  
     if(table == NULL || data == NULL){
         printf("Invalid input.\n");
         return -1;
@@ -150,8 +150,23 @@ int Resize(hs_table* table, int new_tlen){
     free(table->head);
     table->head = new_table->head;
     table->tlen = new_table->tlen;
+    table->cnt = new_table->cnt;
     free(new_table);
     printf("Hash table resized to new length %d, LoadFactor: %.2f\n", 
             new_tlen, LoadFactor(table));
+    return 0;
+}
+
+int DestroyTable(hs_table* table){
+    if(table == NULL){
+        printf("Invalid input.\n");
+        return -1;
+    }
+    if(table->head != NULL){
+        free(table->head);
+        table->head = NULL;
+    }
+    free(table);
+    printf("Hash table destroyed successfully.\n");
     return 0;
 }
