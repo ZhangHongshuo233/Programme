@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "hashtable.h"
-
+#define MAX_SIZE 100
 // 主函数测试
 int main()
 {
@@ -14,7 +14,7 @@ int main()
     }
     // 定义测试数据
     int len = 10;
-    datatype a[len];
+    datatype a[MAX_SIZE];
     for (int i = 0; i < len; i++)
     {
         a[i].val = i * 10 + 7; // 生成一些测试数据，如7, 17, 27, ...
@@ -30,11 +30,12 @@ int main()
     Resize(table, 23);
     // 查询数据67
     int want_num = 67;
-    int ret = Search(table, &a[want_num]);
+    datatype search_data = {want_num, 0}; // 只需要val字段，occupied不影响查询
+    int ret = Search(table, &search_data);
     // 删除数据67
-    Delete(table, &a[want_num]);
+    Delete(table, &search_data);
     // 再次查询67（验证删除）
-    Search(table, &a[want_num]);
+    Search(table, &search_data);
     // 销毁哈希表
     DestroyTable(table);
     return 0;
