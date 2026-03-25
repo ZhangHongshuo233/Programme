@@ -136,7 +136,7 @@ int Resize(hs_table* table, int new_tlen){
         printf("扩容参数无效（新长度需大于原长度）\n");
         return -1; 
     }
-    hs_table* new_table = Create(new_tlen);
+    hs_table* new_table = CreateTable(new_tlen);
     if(new_table == NULL){
         printf("Failed to create new hash table for resizing.\n");
         return -1;

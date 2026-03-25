@@ -7,7 +7,7 @@
 int main()
 {
     // 创建长度为11（质数）的哈希表
-    hs_table* table = CreatetableTable(11);
+    hs_table* table = CreateTable(11);
     if (table == NULL)
     {
         return -1;
