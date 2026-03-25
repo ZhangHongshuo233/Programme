@@ -18,6 +18,8 @@ int main()
     for (int i = 0; i < len; i++)
     {
         a[i].val = i * 10 + 7; // 生成一些测试数据，如7, 17, 27, ...
+        a[i].occupied = 0; // 初始化为未占用
+        Insert(table, &a[i]);
     }
     // 插入数据
     for (int i = 0; i < len; i++)
