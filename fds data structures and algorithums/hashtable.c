@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include "hashtable.h"
+//哈希表实现，使用开放地址法
+//具体用线性探测解决冲突
 
 hs_table* CreateTable(int len){  //tlen be prime number to reduce collisions
     if(len <= 0){
