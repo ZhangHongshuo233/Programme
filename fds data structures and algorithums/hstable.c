@@ -150,7 +150,7 @@ int Remove(HashTable* table, const char* key){
 // 检查键是否存在
 int containsKey(HashTable* table, const char* key) {
     int found = 0;
-    get(table, key, &found);
+    Get(table, key, &found);
     return found;
 }
 

@@ -10,11 +10,11 @@ int main() {
     printf("哈希表已创建\n\n");
     
     // 插入数据
-    put(table, "apple", 5);
-    put(table, "banana", 8);
-    put(table, "orange", 12);
-    put(table, "grape", 3);
-    put(table, "watermelon", 20);
+    Insert(table, "apple", 5);
+    Insert(table, "banana", 8);
+    Insert(table, "orange", 12);
+    Insert(table, "grape", 3);
+    Insert(table, "watermelon", 20);
     
     printf("插入5个元素后:\n");
     printHashTable(table);
@@ -38,24 +38,24 @@ int main() {
     printf("\n");
     
     // 更新数据
-    put(table, "apple", 10);
+    Insert(table, "apple", 10);
     printf("更新 apple 后:\n");
     value = Get(table, "apple", &found);
     printf("apple = %d\n\n", value);
     
     // 删除数据
-    removeKey(table, "grape");
-    printf("删除 grape 后，大小: %d\n", size(table));
+    Remove(table, "grape");
+    printf("删除 grape 后，大小: %d\n", table->size);
     printf("grape 是否存在: %s\n\n", containsKey(table, "grape") ? "是" : "否");
     
     // 再次打印
-    printHashTable(table);
+    PrintTable(table);
     
     // 清空并销毁
-    clear(table);
-    printf("\n清空后大小: %d\n", size(table));
+    Clear(table);
+    printf("\n清空后大小: %d\n", table->size);
     
-    destroyHashTable(table);
+    DestroyTable(table);
     printf("哈希表已销毁\n");
     
     return 0;
