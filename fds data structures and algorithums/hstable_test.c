@@ -6,7 +6,7 @@
 
 int main() {
     // 创建哈希表
-    HashTable* table = createHashTable(10);
+    HashTable* table = CreateTable(10);
     printf("哈希表已创建\n\n");
     
     // 插入数据
@@ -17,7 +17,7 @@ int main() {
     Insert(table, "watermelon", 20);
     
     printf("插入5个元素后:\n");
-    printHashTable(table);
+    PrintTable(table);
     printf("\n");
     
     // 获取数据

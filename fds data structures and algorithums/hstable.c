@@ -100,6 +100,7 @@ int Get(const HashTable* table, const char* key, int* found){
         printf("Invalid input.\n");
         return -1;
     }
+    *found = 0;
     unsigned int idx = hash(table, key);
     node* current = table->buckets[idx];
     while(current != NULL){
@@ -109,10 +110,8 @@ int Get(const HashTable* table, const char* key, int* found){
         }
         current = current->next;
     }
-    if(*found == 0){
-        printf("Key '%s' not found.\n", key);
-        return 0;
-    }
+    printf("Key '%s' not found.\n", key);
+    return 0;
 }
 
 //删除元素，返回1表示成功删除，返回0表示未找到，返回-1表示输入无效
@@ -148,7 +147,7 @@ int Remove(HashTable* table, const char* key){
 }
 
 // 检查键是否存在
-int containsKey(HashTable* table, const char* key) {
+int containsKey(const HashTable* table, const char* key) {
     int found = 0;
     Get(table, key, &found);
     return found;
