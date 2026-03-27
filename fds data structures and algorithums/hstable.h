@@ -19,7 +19,7 @@ node* CreateNode(const char* key, int val);
 void Insert(HashTable* table, const char* key, int val);
 int Get(const HashTable* table, const char* key, int* found);
 int Remove(HashTable* table, const char* key);
-int ContainKey(const HashTable* table, const char* key);
+int containsKey(const HashTable* table, const char* key);
 void PrintTable(const HashTable* table);
 void Clear(HashTable* table);
 void DestroyTable(HashTable* table);

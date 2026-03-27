@@ -1,21 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include "hstable.h"
 //哈希表实现，使用链式地址法
 //每个桶使用链表存储冲突的元素
 
-typedef struct Node{
-    int val;
-    char* key;
-    struct Node* next;
-}node;
-
-typedef struct HashTable{
-    node** buckets;
-    int size;
-    int capacity;
-}HashTable;
 
 //简单的哈希函数，基于djb2算法
 unsigned int hash(const HashTable* table, const char* key) {
