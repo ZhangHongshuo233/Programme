@@ -13,7 +13,7 @@ LinkStack* CreateLinkStack(){
     return stack;
 }
 
-int push(LinkStack* stack, datatype* data) {
+int Push(LinkStack* stack, datatype* data) {
     if (stack == NULL || data == NULL) {
         printf("Push failed: invalid parameter.\n");
         return 1; 
@@ -39,7 +39,7 @@ int IsEmpty(LinkStack* stack) {
     return (stack->count == 0) || (stack->top == NULL);
 }
 
-int pop(LinkStack* stack, datatype* data) {
+int Pop(LinkStack* stack, datatype* data) {
     if (IsEmpty(stack)) {
         printf("Pop failed: stack is empty.\n");
         return 1; 
@@ -53,7 +53,7 @@ int pop(LinkStack* stack, datatype* data) {
     return 0; // Success
 }
 
-datatype* getTop(LinkStack* stack) {
+datatype* GetTop(LinkStack* stack) {
     if (IsEmpty(stack)) {
         printf("Get top failed: stack is empty.\n");
         return NULL; 
@@ -61,7 +61,7 @@ datatype* getTop(LinkStack* stack) {
     return &(stack->top->data);
 }
 
-int clearStack(LinkStack* stack) {
+int ClearStack(LinkStack* stack) {
     if(stack == NULL){
         return 1;
     }
@@ -74,4 +74,13 @@ int clearStack(LinkStack* stack) {
     stack->top = NULL;
     stack->count = 0;
     return 0;
+}
+
+int DestroyStack(LinkStack* stack) {
+    if (stack == NULL) {
+        return 1; 
+    }
+    ClearStack(stack);
+    free(stack);
+    return 0; 
 }

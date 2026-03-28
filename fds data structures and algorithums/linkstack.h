@@ -17,11 +17,12 @@ typedef struct{
 }LinkStack;
 
 LinkStack* CreateLinkStack();
-int push(LinkStack* stack, datatype* data);
-int pop(LinkStack* stack, datatype* data);
-datatype* getTop(LinkStack* stack);
+int Push(LinkStack* stack, datatype* data);
+int Pop(LinkStack* stack, datatype* data);
+datatype* GetTop(LinkStack* stack);
 int IsEmpty(LinkStack* stack);
 int GetSize(LinkStack* stack);
-int clearStack(LinkStack* stack);
+int ClearStack(LinkStack* stack);
+int DestroyStack(LinkStack* stack);
 
 #endif // LINKSTACK_H
