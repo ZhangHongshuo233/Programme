@@ -1,9 +1,10 @@
 #include <stdio.h>
-#include "tree/tree.h"
+#include <stdlib.h>
+#include <string.h>
+#include "tree.h"
+#include "linkstack.h"
+#include "linkque.h"
 
-// tree.c 中已实现，但 tree.h 当前未声明的接口
-void CreateTree(TreeNode **root, char *data, int *idx);
-void LevelOrderTraversal(TreeNode *tree);
 
 int main(void)
 {
@@ -13,7 +14,7 @@ int main(void)
     int idx = 0;
 
     // 创建二叉树
-    CreateTree(&root, data, &idx);
+    CreateRoot(&root, data, &idx);
 
     printf("===== 递归遍历 =====\n");
     printf("前序遍历: ");

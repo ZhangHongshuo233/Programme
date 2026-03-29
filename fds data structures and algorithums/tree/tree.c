@@ -6,7 +6,7 @@
 #include "linkque.h"
 
 //创建树(Create Tree)
-void CreateTree(TreeNode** root, char* data, int* idx) {
+void CreateRoot(TreeNode** root, char* data, int* idx) {
     //示例：abd##e##c#fh###
 //         a
 //       /   \
@@ -30,9 +30,9 @@ void CreateTree(TreeNode** root, char* data, int* idx) {
         //存入当前结点数据
         (*root)->data = ch;
         //递归创建左子树
-        CreateTree(&((*root)->left), data, idx);
+        CreateRoot(&((*root)->left), data, idx);
         //递归创建右子树
-        CreateTree(&((*root)->right), data, idx);
+        CreateRoot(&((*root)->right), data, idx);
     }
 }
 
