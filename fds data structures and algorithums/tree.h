@@ -7,26 +7,6 @@ typedef struct TreeNode{
     struct TreeNode *right;
 }TreeNode;
 
-//stack for tree traversal(栈结点结构，用于非递归遍历树)
-typedef struct stacknode{
-    TreeNode* tree_node;
-    struct stacknode *next;
-}StackNode;
-
-//栈结构(链式栈)
-typedef struct{
-    StackNode* top;
-    int size;
-}LinkStack;
-
-//栈操作函数声明
-LinkStack* CreateLinkStack();
-int Push(LinkStack* stack, StackNode* node);
-TreeNode* Pop(LinkStack* stack, char* data);
-int IsEmpty(LinkStack* stack);
-int ClearStack(LinkStack* stack);
-void DestroyStack(LinkStack* stack);
-
 //树操作函数声明
 void CreateRoot(TreeNode** root, char* data, int* idx);
 void PreOrderTraversal(TreeNode* tree);

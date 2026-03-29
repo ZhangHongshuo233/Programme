@@ -16,14 +16,14 @@ typedef struct stacknode{
 //栈结构(链式栈)
 typedef struct{
     StackNode* top;
-    int count;
+    int size;
 }LinkStack;
 
 //栈操作函数声明
 LinkStack* CreateLinkStack();
-int Push(LinkStack* stack, StackNode* node);
-TreeNode* Pop(LinkStack* stack, char* data);
-int IsEmpty(LinkStack* stack);
+int PushStack(LinkStack* stack, TreeNode* node);
+TreeNode* PopStack(LinkStack* stack);
+int IsEmptyStack(LinkStack* stack);
 int ClearStack(LinkStack* stack);
 void DestroyStack(LinkStack* stack);
 
