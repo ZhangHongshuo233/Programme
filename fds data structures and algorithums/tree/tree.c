@@ -219,7 +219,7 @@ void LevelOrderTraversal(TreeNode* tree){
     EnterLinkQueue(queue, tree);
     while(!IsEmptyLinkQueue(queue)){
         //出队访问当前结点
-        TreeNode* node = GetHeadLinkQueue(queue);
+        TreeNode* node = *(GetHeadLinkQueue(queue));
         printf("%c ", node->data);
         //左子结点入队
         if(node->left != NULL){
