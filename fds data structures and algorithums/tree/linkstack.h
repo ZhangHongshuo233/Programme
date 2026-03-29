@@ -1,5 +1,5 @@
-#ifndef _LINKSTACK_FOR_TREE_H_
-#define _LINKSTACK_FOR_TREE_H_
+#ifndef _LINKSTACK_H_
+#define _LINKSTACK_H_
 
 #include "tree.h"
 
@@ -22,4 +22,4 @@ TreeNode *PopStack(LinkStack *stack);
 int IsEmptyStack(LinkStack *stack);
 void DestroyLinkStack(LinkStack *stack);
 
-#endif // _LINKSTACK_FOR_TREE_H_
+#endif // _LINKSTACK_H_
