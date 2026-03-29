@@ -16,7 +16,7 @@ typedef struct stacknode{
 //栈结构(链式栈)
 typedef struct{
     StackNode* top;
-    int count;
+    int size;
 }LinkStack;
 
 //栈操作函数声明
@@ -36,8 +36,8 @@ void PreOrderTraversalNonRecursive(TreeNode* tree);
 void InOrderTraversalNonRecursive(TreeNode* tree);
 void PostOrderTraversalNonRecursive(TreeNode* tree);
 int GetTreeDepth(TreeNode* tree);
-int GetNodeCount(TreeNode* tree);
-int GetLeafCount(TreeNode* tree);
+int GetNodesize(TreeNode* tree);
+int GetLeafsize(TreeNode* tree);
 int ClearTree(TreeNode** tree);
 void DestroyTree(TreeNode** tree);
 #endif 
