@@ -27,7 +27,7 @@ int EnterLinkQueue(LinkQueue *queue, datatype newdata)
         printf("EnterLinkQueue malloc error\n");
         return 1;
     }
-    memcpy(&newnode->data, newdata, sizeof(datatype));
+    newnode->data = newdata;
     newnode->next = NULL;
  
     if (IsEmptyLinkQueue(queue))
