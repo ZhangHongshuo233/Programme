@@ -3,9 +3,10 @@
 #include <string.h>
 #include "tree.h"
 #include "linkstack.h"
+#include "linkque.h"
 
 //创建树(Create Tree)
-void CreateRoot(TreeNode** root, char* data, int* idx) {
+void CreateTree(TreeNode** root, char* data, int* idx) {
     //示例：abd##e##c#fh###
 //         a
 //       /   \
@@ -29,14 +30,14 @@ void CreateRoot(TreeNode** root, char* data, int* idx) {
         //存入当前结点数据
         (*root)->data = ch;
         //递归创建左子树
-        CreateRoot(&((*root)->left), data, idx);
+        CreateTree(&((*root)->left), data, idx);
         //递归创建右子树
-        CreateRoot(&((*root)->right), data, idx);
+        CreateTree(&((*root)->right), data, idx);
     }
 }
 
 
-//深度优先遍历(Depth-First Traversal)的递归实现：
+//深度优先遍历(DFS,Depth-First Search)的递归实现：
 
 //1.前序遍历(PreOrder Traversal)
 void PreOrderTraversal(TreeNode* tree){
@@ -84,7 +85,7 @@ void PostOrderTraversal(TreeNode* tree){
     //理论上输出应该是：d e b h f c a   
 }
 
-//深度优先遍历(Depth-First Traversal)的非递归实现：
+//深度优先遍历(DFS,Depth-First Search)的非递归实现：
 
 //1.前序遍历(PreOrder Traversal)
 //核心思路：
@@ -197,3 +198,52 @@ void PostOrderTraversalNonRecursive(TreeNode* tree){
 因此，通过数学归纳法可知，对于任意二叉树，该算法均能正确输出后序遍历序列。
 */
 
+// 广度优先遍历(BFS,Breadth-First Search)：层序遍历（队列实现）
+/* 
+    层序遍历的顺序是从上到下、从左到右访问每一层的结点，
+    其实现依赖队列的 “先进先出” 特性，
+    与深度优先遍历的前序、中序、后序规则完全不同。
+*/
+//核心思路：
+// 1.根结点入队，循环出队访问当前结点；
+// 2.访问当前结点后，将其左、右子结点依次入队；
+// 3.重复直到队列为空。
+
+void LevelOrderTraversal(TreeNode* tree){
+    if(tree == NULL){
+        return;
+    }
+    //创建空队列
+    LinkQueue* queue = CreateLinkQueue();
+    //根结点入队
+    EnterLinkQueue(queue, tree);
+    while(!IsEmptyLinkQueue(queue)){
+        //出队访问当前结点
+        TreeNode* node = GetHeadLinkQueue(queue);
+        printf("%c ", node->data);
+        //左子结点入队
+        if(node->left != NULL){
+            EnterLinkQueue(queue, node->left);
+        }
+        //右子结点入队
+        if(node->right != NULL){
+            EnterLinkQueue(queue, node->right);
+        }
+        //队首结点出队
+        QuitLinkQueue(queue);   
+    }
+    DestroyLinkQueue(queue);
+}
+
+void DestroyTree(TreeNode* tree){
+    if(tree == NULL){
+        return;
+    }
+    //递归销毁左子树
+    DestroyTree(tree->left);
+    //递归销毁右子树
+    DestroyTree(tree->right);
+    //释放当前结点
+    free(tree);
+    tree = NULL;
+}

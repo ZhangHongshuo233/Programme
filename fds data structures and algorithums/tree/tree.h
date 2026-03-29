@@ -15,9 +15,5 @@ void PostOrderTraversal(TreeNode* tree);
 void PreOrderTraversalNonRecursive(TreeNode* tree);
 void InOrderTraversalNonRecursive(TreeNode* tree);
 void PostOrderTraversalNonRecursive(TreeNode* tree);
-int GetTreeDepth(TreeNode* tree);
-int GetNodesize(TreeNode* tree);
-int GetLeafsize(TreeNode* tree);
-int ClearTree(TreeNode** tree);
-void DestroyTree(TreeNode** tree);
+void DestroyTree(TreeNode* tree);
 #endif 
