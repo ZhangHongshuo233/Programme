@@ -129,6 +129,5 @@ int main(){
     TreeNode* root = buildTreeFromPreIn(preorder, inorder, n);
     PostOrderTraversal(root, n);
     DestroyTree(root);
-
     return 0;
 }
