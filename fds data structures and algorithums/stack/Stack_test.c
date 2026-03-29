@@ -21,8 +21,8 @@ int main() {
     printf("Stack size: %d\n", GetSize(stack));
 
     datatype topData;
-    if (getTop(stack) != NULL) {
-        printf("Top element: id=%d, name=%s\n", getTop(stack)->val, getTop(stack)->name);
+    if (GetTop(stack) != NULL) {
+        printf("Top element: id=%d, name=%s\n", GetTop(stack)->val, GetTop(stack)->name);
     }
 
     while (!IsEmpty(stack)) {
