@@ -15,6 +15,7 @@ typedef struct TreeNode{
 
 //Tree operations
 TreeNode* buildTreeFromPreIn(char* preorder, char* inorder, int len){
+    if(len <= 0) return NULL;
     TreeNode* root = (TreeNode*)malloc(sizeof(TreeNode));
     root->data = preorder[0];
     root->left = root->right = NULL;
@@ -105,7 +106,7 @@ void DestroyStack(LinkStack* stack){
 int main(){
     char preorder[31], inorder[31];
     int preidx = 0, inidx = 0;
-    char* str;
+    char* str = (char*)malloc(10*sizeof(char));
     int n;
     scanf("%d", &n);
     LinkStack* stack = CreateStack();
@@ -114,13 +115,15 @@ int main(){
         if(strcmp(str,"Push") == 0){
             char ch;
             scanf(" %c", &ch);
-            Push(stack, ch);
+            TreeNode* node = (TreeNode*)malloc(sizeof(TreeNode));
+            node->data = ch;
+            Push(stack, node);
             preorder[preidx++] = ch;
         }
         else if(strcmp(str,"Pop") == 0){
-            char ch = GetTop(stack);
+            TreeNode* node = GetTop(stack);
             Pop(stack);
-            inorder[inidx++] = ch;
+            inorder[inidx++] = node->data;
         }
     }
     DestroyStack(stack);
