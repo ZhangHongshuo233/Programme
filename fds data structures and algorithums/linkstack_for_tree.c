@@ -23,7 +23,7 @@ int Push(LinkStack* stack, StackNode* node){
     stack->count++;
     return 0;
 }
-TreeNode* Pop(LinkStack* stack, datatype* data){
+TreeNode* Pop(LinkStack* stack, char* data){
     if(stack == NULL || data == NULL){
         printf("Stack or data is NULL!\n");
         return NULL;

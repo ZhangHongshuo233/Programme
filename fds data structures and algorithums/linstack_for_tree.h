@@ -1,13 +1,8 @@
 #ifndef _LINSTACK_FOR_TREE_H_
 #define _LINSTACK_FOR_TREE_H_
 
-typedef struct data{
-    int val;
-    char name[20];
-}datatype;
-
 typedef struct TreeNode{
-    datatype data;
+    char data;
     struct TreeNode *left;
     struct TreeNode *right;
 }TreeNode;
@@ -27,7 +22,7 @@ typedef struct{
 //栈操作函数声明
 LinkStack* CreateLinkStack();
 int Push(LinkStack* stack, StackNode* node);
-TreeNode* Pop(LinkStack* stack, datatype* data);
+TreeNode* Pop(LinkStack* stack, char* data);
 int IsEmpty(LinkStack* stack);
 int ClearStack(LinkStack* stack);
 void DestroyStack(LinkStack* stack);
