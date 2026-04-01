@@ -198,6 +198,42 @@ void PostOrderTraversalNonRecursive(TreeNode* tree){
 因此，通过数学归纳法可知，对于任意二叉树，该算法均能正确输出后序遍历序列。
 */
 
+//3.2 后序遍历的第二种非递归实现（单栈 + pre 指针）
+//核心思路：
+//  1.将所有左子结点入栈；
+//  2.查看栈顶结点（不弹出）：
+//    若右子结点存在且尚未被访问（right != pre），则转向右子树；
+//    否则访问当前结点，将 pre 更新为该结点，并将 cur 置为 NULL
+//    以防止循环重新入栈。
+
+void PostOrderTraversalNonRecursive2(TreeNode* tree){
+    if(tree == NULL){
+        return;
+    }
+    LinkStack* stack = CreateLinkStack();
+    TreeNode* cur = tree;
+    TreeNode* pre = NULL; //记录上一个访问的结点
+    while(!IsEmptyStack(stack) || cur != NULL){
+        while(cur != NULL){
+            PushStack(stack, cur);
+            cur = cur->left;
+        }
+        //查看栈顶结点但不弹出
+        cur = stack->top->tree_node;
+        //如果右子结点存在且未被访问过，则处理右子树
+        if(cur->right != NULL && cur->right != pre){
+            cur = cur->right;
+        }
+        //否则访问当前结点
+        else{
+            printf("%c ", cur->data);
+            pre = PopStack(stack);
+            cur = NULL; //重置cur，避免重复入栈
+        }
+    }
+    DestroyLinkStack(stack);
+}
+
 // 广度优先遍历(BFS,Breadth-First Search)：层序遍历（队列实现）
 /* 
     层序遍历的顺序是从上到下、从左到右访问每一层的结点，
