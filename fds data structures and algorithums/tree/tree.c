@@ -235,6 +235,42 @@ void LevelOrderTraversal(TreeNode* tree){
     DestroyLinkQueue(queue);
 }
 
+// 后序遍历方法2：使用pre指针标记已访问的结点
+// 核心思路：
+//  1.从根结点开始，将所有左子结点入栈；
+//  2.查看栈顶结点（不弹出），若其右子结点存在且未被访问，则转向右子树；
+//  3.否则访问当前结点，用pre记录，弹出栈顶，将cur置为NULL（避免重复入栈）；
+//  4.重复直到栈为空且cur为NULL。
+
+void PostOrderTraversalNonRecursive2(TreeNode* tree){
+    if(tree == NULL){
+        return;
+    }
+    LinkStack* stack = CreateLinkStack();
+    TreeNode* cur = tree;
+    TreeNode* pre = NULL; //记录上一个访问的结点
+    while(!IsEmptyStack(stack) || cur != NULL){
+        while(cur != NULL){
+            PushStack(stack, cur);
+            cur = cur->left;
+        }
+        //查看栈顶结点但不弹出
+        cur = stack->top->tree_node;
+        //如果右子结点存在且未被访问过，则处理右子树
+        if(cur->right != NULL && cur->right != pre){
+            cur = cur->right;
+        }
+        //否则访问当前结点
+        else{
+            printf("%c ", cur->data);
+            pre = cur; //更新上一个访问的结点
+            PopStack(stack);
+            cur = NULL; //置为NULL，避免重复入栈
+        }
+    }
+    DestroyLinkStack(stack);
+}
+
 void DestroyTree(TreeNode* tree){
     if(tree == NULL){
         return;
