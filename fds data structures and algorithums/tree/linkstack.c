@@ -5,9 +5,9 @@
 #include <string.h>
  
 // 创建空栈
-LinkStack *CreateLinkStack()
+LinkStack* CreateLinkStack()
 {
-    LinkStack *stack = (LinkStack *)malloc(sizeof(LinkStack));
+    LinkStack* stack = (LinkStack*)malloc(sizeof(LinkStack));
     if (NULL == stack)
     {
         printf("CreateLinkStack malloc error\n");
@@ -19,13 +19,13 @@ LinkStack *CreateLinkStack()
 }
  
 // 入栈操作
-int PushStack(LinkStack *stack, TreeNode *node)
+int PushStack(LinkStack* stack, TreeNode* node)
 {
     if (NULL == stack || NULL == node)
     {
         return 1;
     }
-    StackNode *newNode = (StackNode *)malloc(sizeof(StackNode));
+    StackNode* newNode = (StackNode*)malloc(sizeof(StackNode));
     if (NULL == newNode)
     {
         printf("PushStack malloc error\n");
@@ -39,14 +39,14 @@ int PushStack(LinkStack *stack, TreeNode *node)
 }
  
 // 出栈操作
-TreeNode *PopStack(LinkStack *stack)
+TreeNode* PopStack(LinkStack* stack)
 {
     if (NULL == stack || IsEmptyStack(stack))
     {
         return NULL;
     }
-    StackNode *tmp = stack->top;
-    TreeNode *TreeNode = tmp->tree_node;
+    StackNode* tmp = stack->top;
+    TreeNode* TreeNode = tmp->tree_node;
     stack->top = tmp->next;
     free(tmp);
     stack->size--;
