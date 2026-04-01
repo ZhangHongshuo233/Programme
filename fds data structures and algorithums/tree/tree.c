@@ -133,7 +133,7 @@ void InOrderTraversalNonRecursive(TreeNode* tree){
         while(cur != NULL){
             PushStack(stack, cur);
             cur = cur->left;
-        }
+        } 
         //弹出栈顶结点并访问
         cur = PopStack(stack);
         printf("%c ", cur->data);
@@ -142,8 +142,10 @@ void InOrderTraversalNonRecursive(TreeNode* tree){
     }
     DestroyLinkStack(stack);
 }
-
+ 
 //3.后序遍历(PostOrder Traversal)
+
+//方法1：双栈法
 //核心思路：
 // 栈 1 存储待处理结点，栈 2 存储访问顺序；
 // 根结点入栈 1，弹出后入栈 2，再将左、右子结点依次入栈 1；
@@ -177,6 +179,45 @@ void PostOrderTraversalNonRecursive(TreeNode* tree){
     DestroyLinkStack(stack2);
 }
 
+//方法2：单栈法
+//核心思路：
+// 1.从根结点开始，沿左子树路径将结点入栈，直到左子结点为空；
+// 2.查看栈顶结点，如果其右子结点存在且未被访问过，则处理右子树；否则弹出栈顶结点并访问；
+// 3.重复直到栈为空且当前结点为 NULL。
+
+void PostOrderTraversalNonRecursive2(TreeNode* tree){
+    if(tree == NULL){
+        return;
+    }
+    LinkStack* stack = CreateLinkStack();
+    if(stack == NULL){
+        return;
+    }
+    TreeNode* cur = tree;
+    TreeNode* pre = NULL; //记录上一个访问的结点
+    while(!IsEmptyStack(stack) || cur != NULL){
+        while(cur != NULL){
+            PushStack(stack, cur);
+            cur = cur->left;
+        }
+        //查看栈顶结点但不弹出
+        TreeNode* topNode = stack->top->tree_node;
+        //判断右子结点是否为空，或者是否已经被访问过
+        if(topNode->right != NULL && pre != topNode->right){
+            //右结点存在且未被访问过，处理右子树
+            cur = topNode->right;
+        }
+        //否则访问当前结点
+        else{
+            printf("%c ", topNode->data);
+            pre = PopStack(stack); //弹出并记录当前访问的结点
+            cur = NULL; //确保继续回溯栈中结点
+        }
+    }
+    DestroyLinkStack(stack);
+}
+
+
 /*
 正确性证明
 1. 栈 stack2 中的节点顺序
@@ -197,42 +238,6 @@ void PostOrderTraversalNonRecursive(TreeNode* tree){
 • 这保证了在 stack2 中，每个子树的节点都被集中放置，且顺序符合“根-右-左”的递归定义。
 因此，通过数学归纳法可知，对于任意二叉树，该算法均能正确输出后序遍历序列。
 */
-
-//3.2 后序遍历的第二种非递归实现（单栈 + pre 指针）
-//核心思路：
-//  1.将所有左子结点入栈；
-//  2.查看栈顶结点（不弹出）：
-//    若右子结点存在且尚未被访问（right != pre），则转向右子树；
-//    否则访问当前结点，将 pre 更新为该结点，并将 cur 置为 NULL
-//    以防止循环重新入栈。
-
-void PostOrderTraversalNonRecursive2(TreeNode* tree){
-    if(tree == NULL){
-        return;
-    }
-    LinkStack* stack = CreateLinkStack();
-    TreeNode* cur = tree;
-    TreeNode* pre = NULL; //记录上一个访问的结点
-    while(!IsEmptyStack(stack) || cur != NULL){
-        while(cur != NULL){
-            PushStack(stack, cur);
-            cur = cur->left;
-        }
-        //查看栈顶结点但不弹出
-        cur = stack->top->tree_node;
-        //如果右子结点存在且未被访问过，则处理右子树
-        if(cur->right != NULL && cur->right != pre){
-            cur = cur->right;
-        }
-        //否则访问当前结点
-        else{
-            printf("%c ", cur->data);
-            pre = PopStack(stack);
-            cur = NULL; //重置cur，避免重复入栈
-        }
-    }
-    DestroyLinkStack(stack);
-}
 
 // 广度优先遍历(BFS,Breadth-First Search)：层序遍历（队列实现）
 /* 
