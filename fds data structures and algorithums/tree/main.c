@@ -32,6 +32,9 @@ int main(void)
     printf("\n后序遍历: ");
     PostOrderTraversalNonRecursive(root);
 
+    printf("\n后序遍历(方法2): ");
+    PostOrderTraversalNonRecursive2(root);
+
     printf("\n===== 层序遍历 =====\n");
     printf("层序遍历: ");
     LevelOrderTraversal(root);
