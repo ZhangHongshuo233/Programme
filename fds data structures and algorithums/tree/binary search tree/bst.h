@@ -38,7 +38,6 @@ void Delete(Node* root, int val);
 void PreOrderTraversal(Node* root);
 void InOrderTraversal(Node* root);
 void PostOrderTraversal(Node* root);
-void LevelOrderTraversal(Node* root);
 void Clear(Node* root);
 void DestroyBST(BST* bst);
 
