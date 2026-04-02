@@ -19,7 +19,7 @@ typedef struct key{
 }Key;
 
 typedef struct Node{
-    Key key;
+    int key;
     struct Node* left;
     struct Node* right;
 }Node;
@@ -29,14 +29,15 @@ typedef struct BST{
     int size; 
 }BST;
 
-void CreateBST(BST* bst);
-Node* SearchBST(BST* bst, Key key);
-Node* FindMin(BST* bst);
-Node* FindMax(BST* bst);
-int Insert(BST* bst, Key key);
-int Delete(BST* bst, Key key); 
-void PreOrderTraversal(Node* node);
-void InOrderTraversal(Node* node);
+BST* CreateBST();  
+Node* Search(Node* root, int val);
+int  FindMin(Node* root);
+int  FindMax(Node* root);
+void Insert(Node* root, int val);
+void Delete(Node* root, int val); 
+void PreOrderTraversal(Node* root);
+void InOrderTraversal(Node* root);
+void PostOrderTraversal(Node* root);
 void DestroyBST(BST* bst);
 
 
