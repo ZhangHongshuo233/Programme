@@ -31,8 +31,8 @@ typedef struct BST{
 
 void CreateBST(BST* bst);
 Node* SearchBST(BST* bst, Key key);
-Node* FindMin(Node* node);
-Node* FindMax(Node* node);
+Node* FindMin(BST* bst);
+Node* FindMax(BST* bst);
 int Insert(BST* bst, Key key);
 int Delete(BST* bst, Key key); 
 void PreOrderTraversal(Node* node);
