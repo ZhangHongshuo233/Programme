@@ -513,4 +513,4 @@ int main(void){
      *  so, in the last version, the program is added with a series of memory leak checks
      *  which makes the program look a bit not elegent :-)
      */
-}
+} 
