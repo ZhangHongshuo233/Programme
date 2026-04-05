@@ -1,5 +1,5 @@
-#ifndef _TREE_H_
-#define _TREE_H_
+#ifndef _BINARY_TREE_H_
+#define _BINARY_TREE_H_
 
 typedef struct TreeNode{
     char data;
@@ -18,4 +18,4 @@ void PostOrderTraversalNonRecursive(TreeNode* tree);
 void PostOrderTraversalNonRecursive2(TreeNode* tree);
 void LevelOrderTraversal(TreeNode* tree);
 void DestroyTree(TreeNode* tree);
-#endif 
+#endif // _BINARY_TREE_H_
