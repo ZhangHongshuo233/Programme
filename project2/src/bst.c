@@ -105,6 +105,8 @@ static hs_table* hash_create(int len){
  *  1.we can also use other hash functions, but this one is simple and effective for our key range.
  *  2.we can use inline to suggest the compiler to optimize it, since it will be called frequently.
  *  (This is not important for correctness, just a performance hint.)
+ *  you can just modify it as static inline int hash_func(long long key)
+ *  3.since the return vallue is nonegative, we don't need to check if idx < 0.
  */
 static int hash_func(long long key){
     unsigned long long u = (unsigned long long)key;
@@ -126,10 +128,6 @@ static void hash_insert(hs_table* table, long long key){
     int idx = hash_func(key);
     //store the original index to detect full table
     int org_idx = idx;
-    if(idx < 0){
-        printf("Hash function error.\n");
-        return;
-    }   
     while(table->head[idx] != EMPTY && table->head[idx] != key){
         idx = (idx + 1) & HASH_MASK;
         if(idx == org_idx){
@@ -137,8 +135,15 @@ static void hash_insert(hs_table* table, long long key){
             return;
         }
     }
-    table->head[idx] = key;
-    table->cnt++;
+    /* 
+     * when the while loop ends, 
+     * idx is either EMPTY or already contains the same key
+     * so we need to check whether it's a new insertion or a duplicate key
+     */
+    if(table->head[idx] == EMPTY){
+        table->head[idx] = key;
+        table->cnt++;
+    }
 }
 
 /*
@@ -150,10 +155,6 @@ static int hash_search(hs_table* table, long long key){
         return 0;
     }
     int idx = hash_func(key);
-    if(idx < 0){
-        printf("Hash function error.\n");
-        return 0;
-    }
     int org_idx = idx;
     while(1){
         /* Nessary explaint for the logic of linear probing search:
@@ -356,7 +357,7 @@ static void preorder(Node tree[], int root, long long buf[], int* size){
 }
 
  /* ──────────────────────────────────────────────────────────────
-   Map T2's keys into hash table (via inorder traversal)
+   Map T2's keys into hash table 
    ────────────────────────────────────────────────────────────── */
 static void map_tree_to_hash(Node tree[], int root, hs_table* table){
     stack* stack = stack_create();
