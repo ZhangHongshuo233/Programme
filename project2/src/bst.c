@@ -49,6 +49,9 @@ static int       inorder1_size = 0;
 static long long preorder1[MAXN], preorder2[MAXN];
 static int       preorder1_size = 0, preorder2_size = 0;
 
+/* Pair results buffer (avoid large stack allocation in main) */
+static long long pair_res[MAXN];
+
 /* ──────────────────────────────────────────────────────────────
    Hash Table Operations
    ────────────────────────────────────────────────────────────── */
@@ -448,7 +451,6 @@ int main(void){
      * We skip consecutive duplicates to satisfy "same equation once".
      */
     /* Temporary result storage: store A values that form a solution */
-    long long res[MAXN];
     int res_size = 0;
     if(table != NULL){
         for(int i=0;i<inorder1_size;i++){
@@ -459,7 +461,7 @@ int main(void){
             long long a = inorder1[i];
             long long b = N - a;
             if(hash_search(table, b)){
-                res[res_size++] = a;
+                pair_res[res_size++] = a;
             }
         }
         hash_destroy(table);
@@ -471,7 +473,7 @@ int main(void){
     }else{
         printf("true\n");
         for (int i = 0; i < res_size; i++)
-            printf("%lld = %lld + %lld\n", N, res[i], N - res[i]);
+            printf("%lld = %lld + %lld\n", N, pair_res[i], N - pair_res[i]);
     }
 
     /* ── Step 8: Preorder traversals of T1,T2── */
