@@ -420,6 +420,7 @@ int main(void){
             res[res_size++] = a;
         }
     }
+    hash_destroy(table);
 
     /* ── Step 7: Output results ── */
     if(res_size == 0){
