@@ -59,12 +59,20 @@ gcc bst.c -O2 -o bst
 bst < input.txt
 ```
 
+or run interactively:
+.\bst.exe
+[type input manually, then press Enter to end input]
+
 ### Linux / macOS (GCC/Clang)
 
 ```bash
 gcc bst.c -O2 -o bst
 ./bst < input.txt
 ```
+
+or run interactively:
+.\bst.exe
+[type input manually, then press Enter to end input]
 
 ---
 
