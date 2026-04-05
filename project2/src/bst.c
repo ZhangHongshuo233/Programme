@@ -366,6 +366,9 @@ static void preorder(Node tree[], int root, long long buf[], int* size){
    Map T2's keys into hash table 
    ────────────────────────────────────────────────────────────── */
 static void map_tree_to_hash(Node tree[], int root, hs_table* table){
+    if(table == NULL){
+        return;
+    }
     stack* stack = stack_create();
     if(stack == NULL){
         return;
@@ -410,7 +413,9 @@ int main(void){
 
     /* ── Step 5: Insert all T2's keys into hash table ── */
     hs_table* table = hash_create(HASH_SIZE);
-    map_tree_to_hash(BST2, root2, table);
+    if(table != NULL){
+        map_tree_to_hash(BST2, root2, table);
+    }
 
     /* ── Step 6: Find all pairs(A,B) such that A + B = N ──
      * For each unique A, we check whether (N - A) exists in BST2's hash.
@@ -419,18 +424,20 @@ int main(void){
     /* Temporary result storage: store A values that form a solution */
     long long res[MAXN];
     int res_size = 0;
-    for(int i=0;i<inorder1_size;i++){
-        /* skip duplicates */
-        if(i > 0 && inorder1[i] == inorder1[i-1]){
-            continue;
+    if(table != NULL){
+        for(int i=0;i<inorder1_size;i++){
+            /* skip duplicates */
+            if(i > 0 && inorder1[i] == inorder1[i-1]){
+                continue;
+            }
+            long long a = inorder1[i];
+            long long b = N - a;
+            if(hash_search(table, b)){
+                res[res_size++] = a;
+            }
         }
-        long long a = inorder1[i];
-        long long b = N - a;
-        if(hash_search(table, b)){
-            res[res_size++] = a;
-        }
+        hash_destroy(table);
     }
-    hash_destroy(table);
 
     /* ── Step 7: Output results ── */
     if(res_size == 0){
