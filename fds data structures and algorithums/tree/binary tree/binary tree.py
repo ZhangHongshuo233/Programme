@@ -4,10 +4,67 @@ class TreeNode:
         self.left = left
         self.right = right
 
-def preorder(root):
-    if not root:
-        return []
-    return [root.val] + preorder(root.left) + preorder(root.right)
- 
+    def preorder(self, root):
+        if not root:
+            return []
+        return [root.val] + self.preorder(root.left) + self.preorder(root.right)
+    
+    def inorder(self, root):
+        if not root:
+            return []
+        return self.inorder(root.left) + [root.val] + self.inorder(root.right)
 
+    def postorder(self, root):
+        if not root:
+            return []
+        return self.postorder(root.left) + self.postorder(root.right) + [root.val]
 
+    def preorder_iterative(self, root):
+        if not root:
+            return []
+        stack, res = [root], []
+        while stack:
+            node = stack.pop()
+            res.append(node.val)
+            if node.right:
+                stack.append(node.right)
+            if node.left:
+                stack.append(node.left)
+        return res
+    
+    def inorder_iterative(self, root):
+        if not root:
+            return []
+        stack, res = [], []
+        node = root
+        while stack or node:
+            while node:
+                stack.append(node)
+                node = node.left
+            node = stack.pop()
+            res.append(node.val)
+            node = node.right
+        return res
+    
+    def postorder_iterative(self, root):
+        if not root:
+            return []
+        stack, res = [root], []
+        while stack:
+            node = stack.pop()
+            res.append(node.val)
+            if node.left:
+                stack.append(node.left)
+            if node.right:
+                stack.append(node.right)
+        return res[::-1]
+    
+    def postorder_iterative(self, root):
+        if not root:
+            return []
+        stack1, stack2, res = [root], [], []
+        while stack1:
+            node = stack1.pop()
+            
+
+    
