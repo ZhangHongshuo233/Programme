@@ -268,13 +268,13 @@ static void stack_init(stack* s){
 }
 
 stack* stack_create(){
-    stack* s = (stack*)malloc(sizeof(stack));
-    if(s == NULL){
+    stack* stk = (stack*)malloc(sizeof(stack));
+    if(stk == NULL){
         printf("Memory allocation failed.\n");
         return NULL;
     }
-    stack_init(s);
-    return s;
+    stack_init(stk);
+    return stk;
 }
 
 static void stack_push(stack* s, int val){
