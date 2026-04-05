@@ -307,6 +307,9 @@ static int stack_is_empty(stack* s){
  */
 static void inorder(Node tree[], int root){
     stack* stack = stack_create();
+    if(stack == NULL){
+        return;
+    }
     if(root == -1){
         stack_destroy(stack);
         return;
@@ -334,6 +337,9 @@ static void inorder(Node tree[], int root){
  */
 static void preorder(Node tree[], int root, long long buf[], int* size){
     stack* stack = stack_create();
+    if(stack == NULL){
+        return;
+    }
     if(root == -1){
         stack_destroy(stack);
         return;
@@ -361,6 +367,9 @@ static void preorder(Node tree[], int root, long long buf[], int* size){
    ────────────────────────────────────────────────────────────── */
 static void map_tree_to_hash(Node tree[], int root, hs_table* table){
     stack* stack = stack_create();
+    if(stack == NULL){
+        return;
+    }
     if(root == -1){
         stack_destroy(stack);
         return;
@@ -376,6 +385,7 @@ static void map_tree_to_hash(Node tree[], int root, hs_table* table){
         hash_insert(table, tree[cur].key);
         cur = tree[cur].right;
     }
+    stack_destroy(stack);
 }
 
 /* ──────────────────────────────────────────────────────────────
