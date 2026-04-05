@@ -49,8 +49,8 @@ static int       inorder1_size = 0;
 static long long preorder1[MAXN], preorder2[MAXN];
 static int       preorder1_size = 0, preorder2_size = 0;
 
-/* Pair results buffer (avoid large stack allocation in main) */
-static long long pair_res[MAXN];
+/* Final results (to avoid large stack allocation in main) */
+static long long result[MAXN];
 
 /* ──────────────────────────────────────────────────────────────
    Hash Table Operations
@@ -450,7 +450,15 @@ int main(void){
      * For each unique A, we check whether (N - A) exists in BST2's hash.
      * We skip consecutive duplicates to satisfy "same equation once".
      */
-    /* Temporary result storage: store A values that form a solution */
+
+
+    /* Improvement note:
+     * In the previous version I used long long result[MAXN] 
+     * in the main function for temporary result storage
+     * to store A values that form a solution 
+     * However, this can cause stack overflow
+     * So, I moved the result array to global scope to avoid large stack allocation in main.
+     */
     int res_size = 0;
     if(table != NULL){
         for(int i=0;i<inorder1_size;i++){
@@ -461,7 +469,7 @@ int main(void){
             long long a = inorder1[i];
             long long b = N - a;
             if(hash_search(table, b)){
-                pair_res[res_size++] = a;
+                result[res_size++] = a;
             }
         }
         hash_destroy(table);
@@ -473,7 +481,7 @@ int main(void){
     }else{
         printf("true\n");
         for (int i = 0; i < res_size; i++)
-            printf("%lld = %lld + %lld\n", N, pair_res[i], N - pair_res[i]);
+            printf("%lld = %lld + %lld\n", N, result[i], N - result[i]);
     }
 
     /* ── Step 8: Preorder traversals of T1,T2── */
