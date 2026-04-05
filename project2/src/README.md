@@ -95,10 +95,11 @@ Here `HASH_SIZE = 2^20`; under `n <= 2e5`, the load factor remains low, so avera
 
 ---
 
-## 8. FAQ
+## 8. FAQ(Frequently Asked Questions)
 
 ### Q1: Why does the program exit right after I enter the first line?
 
+(Exclude the case of stack overflow)
 Usually because the input is incomplete. Make sure the full format is provided:
 
 - After `n1`, there must be exactly `n1` node lines.
