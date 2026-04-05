@@ -203,12 +203,24 @@ static void hash_destroy(hs_table* table){
  */
 
 static int tree_create(Node tree[], int n){
-    long long keys[MAXN];
-    int par[MAXN];
+    if(n < 0 || n > MAXN){
+        return -1;
+    }
+    long long* keys = (long long*)malloc(sizeof(long long) * n);
+    int* par = (int*)malloc(sizeof(int) * n);
+    if((n > 0) && (keys == NULL || par == NULL)){
+        free(keys);
+        free(par);
+        return -1;
+    }
     int root = -1;
     //Read all nodes and initialise left/right to "no child"
     for(int i=0;i<n;i++){
-        scanf("%lld %d",&keys[i],&par[i]);
+        if(scanf("%lld %d",&keys[i],&par[i]) != 2){
+            free(keys);
+            free(par);
+            return -1;
+        }
         tree[i].key = keys[i];
         tree[i].left = -1;
         tree[i].right = -1;
@@ -234,6 +246,8 @@ static int tree_create(Node tree[], int n){
         }
     }
 
+    free(keys);
+    free(par);
     return root;
 }
 
@@ -397,16 +411,28 @@ static void map_tree_to_hash(Node tree[], int root, hs_table* table){
 int main(void){
     int n1,n2;
     /* ── Step 1: Read and build BST1 ── */
-    scanf("%d",&n1);
+    if(scanf("%d",&n1) != 1){
+        return 0;
+    }
     int root1 = tree_create(BST1, n1);
+    if(n1 > 0 && root1 == -1){
+        return 0;
+    }
 
     /* ── Step 2: Read and build BST2 ── */
-    scanf("%d",&n2);
+    if(scanf("%d",&n2) != 1){
+        return 0;
+    }
     int root2 = tree_create(BST2, n2);
+    if(n2 > 0 && root2 == -1){
+        return 0;
+    }
 
     /* ── Step 3: Read target N ── */
     long long N;
-    scanf("%lld",&N);
+    if(scanf("%lld",&N) != 1){
+        return 0;
+    }
 
     /* ── Step 4: Inorder traversal of BST1 → key array ── */
     inorder(BST1, root1);   /* (in ascending order due to the properties of binary search tree) */
