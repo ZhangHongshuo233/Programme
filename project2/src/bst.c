@@ -497,4 +497,10 @@ int main(void){
     printf("\n");
 
     return 0;
+    /*some thoughts about the main function:
+     *  in the testing phase, the program has went through
+     *  memory leak for so many times!
+     *  so, in the last version, the program is added with a series of memory leak checks
+     *  which makes the program look a bit not elegent :-)
+     */
 }

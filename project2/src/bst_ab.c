@@ -1,11 +1,5 @@
-/*
+ /*
  * ============================================================
- *  Project: Normal-2  A+B with Binary Search Trees
- *  Course : Fundamentals of Data Structure and Algorithm
- *  Author : (Your Name)
- *  Date   : 2025
- * ============================================================
- *
  *  Problem Summary:
  *    Given two BSTs T1 and T2, and an integer N, find all pairs
  *    (A, B) where A ∈ T1, B ∈ T2, and A + B = N.
@@ -57,7 +51,7 @@ static long long pre1[MAXN], pre2[MAXN];
 static int       pre1_size = 0, pre2_size = 0;
 
 /* Hash table for T2 keys (open addressing, linear probing)      */
-static long long hash_table[HASH_SIZE];
+static long long hash_table[HASH_SIZE]; 
 
 /* ──────────────────────────────────────────────────────────────
    Hash Table Operations
@@ -237,9 +231,9 @@ static void collect_t2_hash(Node t[], int root)
     }
 }
 
-/* ──────────────────────────────────────────────────────────────
-   Main Program
-   ────────────────────────────────────────────────────────────── */
+    /* ──────────────────────────────────────────────────────────────
+    Main Program
+    ────────────────────────────────────────────────────────────── */
 int main(void)
 {
     int n1, n2;
