@@ -1,6 +1,6 @@
 #ifndef LINKQUE_H
 #define LINKQUE_H
-#include "tree.h"
+#include "binary tree.h"
 
 typedef TreeNode* datatype;
 

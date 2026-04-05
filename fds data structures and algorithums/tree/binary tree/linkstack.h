@@ -1,7 +1,7 @@
 #ifndef _LINKSTACK_H_
 #define _LINKSTACK_H_
 
-#include "tree.h"
+#include "binary tree.h"
 
 // stack node for tree traversal
 typedef struct stacknode {
