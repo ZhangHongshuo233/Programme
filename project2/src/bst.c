@@ -16,7 +16,7 @@
  * 2.EMPTY 0x80000001LL :
  *  At first, I set EMPTY to (long long)(2e9 + 1), which is out of the range of input scale(-2e9 to 2e9), to avoid collision with valid keys,
  *  but then I realized that 0x80000001LL maybe a better choice,
- *  because it is out of int range, hhh.
+ *  because it is out of int range.
  */
 
 
@@ -484,7 +484,7 @@ int main(void){
     }
 
     /* ── Step 8: Preorder traversals of T1,T2── */
-    preorder(BST1, root1, preorder1, &preorder1_size);
+    // preorder(BST1, root1, preorder1, &preorder1_size);
     preorder(BST2, root2, preorder2, &preorder2_size);
 
     /* Print T1 preorder */
