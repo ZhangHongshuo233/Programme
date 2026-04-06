@@ -175,7 +175,6 @@ static int hash_search(hs_table* table, long long key){
             return 0;
         }
     }
-    return 0;
 }
 
 static void hash_destroy(hs_table* table){
