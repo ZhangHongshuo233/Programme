@@ -39,7 +39,7 @@ static void headify_up(int* data, size_t idx){
 /* 下沉操作：将索引为 idx 的元素下沉到正确位置 */
 static void heapify_down(int* data, size_t idx, size_t size){
     size_t child;
-    for(size_t i= idx; child = 2*i && child < size; i = child) {
+    for(size_t i = idx; (child = 2 * i) < size; i = child) {
         if(child + 1 < size && data[child+1] < data[child]){
             child++;
         }
