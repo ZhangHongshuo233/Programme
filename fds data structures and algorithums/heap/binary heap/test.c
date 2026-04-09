@@ -16,7 +16,7 @@ int main(void) {
         printf("%d ", min_val);
     }
     printf("\n");
-
+ 
     binary_heap_destroy(heap);
     return 0;
 }
