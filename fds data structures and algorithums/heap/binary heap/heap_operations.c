@@ -179,6 +179,8 @@ void binary_heap_clear(BinaryHeap* heap) {
  * 使用逐个插入法构建堆:
     * 将数组中的元素逐个插入堆中，每次插入后调整堆以满足最小堆性质。
     * 成功返回 0，失败返回 -1。
+    * 时间复杂度为 O(n log n)，因为插入第k个元素堆大小为 k-1，调整堆的时间复杂度为 O(log k)，
+    * 总时间复杂度为 T(n) = sigma(k=1 to n) O(log k) = O(log n!) = O(n log n)
  */
 int heap_build_insertion(BinaryHeap* heap, const int* values, size_t count) {
     if (!heap || !values || count == 0) {
@@ -196,6 +198,8 @@ int heap_build_insertion(BinaryHeap* heap, const int* values, size_t count) {
  * 使用线性建堆法构建堆:
     * 将数组中的元素一次性插入堆中，然后调整堆以满足最小堆性质。
     * 成功返回 0，失败返回 -1。
+    * 时间复杂度为 O(n)，因为高度为i的节点数量为 n/2^(i+1)，每个节点的调整时间为 O(i)
+    * T(n) = sigma(i=1 to n)(n/2^(i+1))*i =n*sigma(i=1 to log n)(i/2^(i+1)) = O(n)
  */
 int  heap_build_linear(BinaryHeap* heap, const int* values, size_t count) {
     if (!heap || !values || count == 0) {
