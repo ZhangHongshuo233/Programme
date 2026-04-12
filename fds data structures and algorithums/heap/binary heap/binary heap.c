@@ -63,6 +63,16 @@ static int binary_heap_resize(BinaryHeap* heap){
     free(heap->data);
     heap->data = new_data;
     heap->capacity = new_capacity;
+    
+    /*也可以使用realloc来简化代码，但需要注意realloc失败时会返回NULL，原内存不会被释放，因此需要先保存原指针以防止内存泄漏
+    int* new_data = (int*)realloc(heap->data, sizeof(int)*new_capacity);
+    if(!new_data){
+        printf("Error: Memory allocation failed during heap resize.\n");
+        return -1;
+    }
+    heap->data = new_data;
+    heap->capacity = new_capacity;
+    */
     return 0;
 }
 
