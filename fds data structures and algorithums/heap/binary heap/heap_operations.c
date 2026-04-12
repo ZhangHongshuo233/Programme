@@ -195,7 +195,7 @@ int heap_build_insertion(BinaryHeap* heap, const int* values, size_t count) {
 }
 
 /*
- * 使用线性建堆法构建堆:
+ * 使用线性建堆法构建堆:(Floyd's algorithm)
     * 将数组中的元素一次性插入堆中，然后调整堆以满足最小堆性质。
     * 成功返回 0，失败返回 -1。
     * 时间复杂度为 O(n)，因为高度为i的节点数量为 n/2^(i+1)，每个节点的调整时间为 O(i)

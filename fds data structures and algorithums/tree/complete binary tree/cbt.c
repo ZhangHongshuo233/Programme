@@ -27,7 +27,14 @@ CBT* tree_create(int n){
     CBT* tree = (CBT*)malloc(sizeof(CBT));
     tree->size = n;
     for(int i = 0; i < n; i++){
-        scanf("%d", &tree->nodes[i].key);
+        tree->nodes[i].key = 1<<32;
+        /*
+         * as for 0-based indexing, the left child of a node at index i is at index 2*i + 1,
+         * and the right child is at index 2*i + 2.
+         * 
+         * as for 1-based indexing, the left child of a node at index i is at index 2*i,
+         * and the right child is at index 2*i + 1.
+         */
         tree->nodes[i].left = (2*i + 1 < n) ? (2*i + 1) : -1;
         tree->nodes[i].right = (2*i + 2 < n) ? (2*i + 2) : -1;
     }
