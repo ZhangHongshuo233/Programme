@@ -63,11 +63,23 @@ typedef struct CBST{
 CBST* tree_create(int n){
     CBST* tree = (CBST*)malloc(sizeof(CBST));
     for(int i = 0; i < n; i++){
-        scanf("%d", &tree->nodes[i].key);
+        tree->nodes[i].key = 0;
         tree->nodes[i].left = (2*i + 1 < n) ? (2*i + 1) : -1;
         tree->nodes[i].right = (2*i + 2 < n) ? (2*i + 2) : -1;
     }
     return tree;
+}
+
+void inorder_traversal(CBST* tree, int index){
+    if(index == -1) return;
+    inorder_traversal(tree, tree->nodes[index].left);
+    scanf("%d", &tree->nodes[index].key);
+    inorder_traversal(tree, tree->nodes[index].right);
+}
+
+void tree_destroy(CBST* tree){
+    if(tree == NULL) return;
+    free(tree);
 }
 
 void LevelOrderTraversal(CBST* tree){
@@ -98,6 +110,8 @@ int main(){
     int n;
     scanf("%d",&n);
     CBST* tree = tree_create(n);
+    inorder_traversal(tree, 0);
     LevelOrderTraversal(tree);
+    tree_destroy(tree);
     return 0;
 }
