@@ -176,36 +176,44 @@ void binary_heap_clear(BinaryHeap* heap) {
    ────────────────────────────────────────────────────────────── */
 
 /*
- * 使用逐个插入法构建堆
+ * 使用逐个插入法构建堆:
+    * 将数组中的元素逐个插入堆中，每次插入后调整堆以满足最小堆性质。
+    * 成功返回 0，失败返回 -1。
  */
-void heap_build_insertion(BinaryHeap* heap, int* arr, size_t n) {
-    if (!heap || !arr || n <= 0) {
-        return;
+int heap_build_insertion(BinaryHeap* heap, const int* values, size_t count) {
+    if (!heap || !values || count == 0) {
+        return -1;
     }
-    for (size_t i = 0; i < n; i++) {
-        binary_heap_insert(heap, arr[i]);
+    for (size_t i = 0; i < count; i++) {
+        if (binary_heap_insert(heap, values[i]) != 0) {
+            return -1;
+        }
     }
+    return 0;
 }
 
 /*
- * 使用线性建堆法构建堆
+ * 使用线性建堆法构建堆:
+    * 将数组中的元素一次性插入堆中，然后调整堆以满足最小堆性质。
+    * 成功返回 0，失败返回 -1。
  */
-void heap_build_linear(BinaryHeap* heap, int* arr, size_t n) {
-    if (!heap || !arr || n <= 0) {
-        return;
+int  heap_build_linear(BinaryHeap* heap, const int* values, size_t count) {
+    if (!heap || !values || count == 0) {
+        return -1;
     }
     /* 直接将元素复制到堆数组中 */
-    for (size_t i = 0; i < n; i++) {
+    for (size_t i = 0; i < count; i++) {
         if (i + 1 >= heap->capacity) { /* 检查容量 */
             if (binary_heap_resize(heap) != 0) {
-                return; /* 扩容失败 */
+                return -1; /* 扩容失败 */
             }
         }
-        heap->data[i + 1] = arr[i]; /* 索引从1开始 */
+        heap->data[i + 1] = values[i]; /* 索引从1开始 */
     }
-    heap->size = n;
+    heap->size = count;
     /* 从最后一个非叶子节点开始下沉调整堆 */
     for (size_t i = heap->size / 2; i > 0; i--) {
         heapify_down(heap->data, i, heap->size);
     }
+    return 0;
 }
