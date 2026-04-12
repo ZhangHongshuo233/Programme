@@ -4,10 +4,11 @@
 int main(void) {
     BinaryHeap* heap = binary_heap_create();
     int values[] = {5, 3, 8, 1, 9, 2};
-    for (size_t i = 0; i < sizeof(values)/sizeof(values[0]); i++) {
-        binary_heap_insert(heap, values[i]);
-    }
-
+    /*使用逐个建堆法：
+     * 插入元素后，堆会自动调整以保持最小堆性质
+     */
+    heap_build_insertion(heap, values, sizeof(values)/sizeof(values[0]));
+    
     printf("Heap size: %zu\n", binary_heap_size(heap));
 
     int min_val;

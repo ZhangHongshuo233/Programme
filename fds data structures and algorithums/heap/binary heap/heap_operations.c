@@ -142,7 +142,7 @@ int binary_heap_extract_min(BinaryHeap* heap, int* out_value) {
     }
     /* 将最后一个元素移到根位置并下沉 */
     heap->data[1] = heap->data[heap->size--];
-    heapify_down(heap->data, 1, heap->size + 1);\
+    heapify_down(heap->data, 1, heap->size);
     return 0;
 }
 
@@ -168,5 +168,41 @@ void binary_heap_clear(BinaryHeap* heap) {
     if (heap) {
         heap->size = 0;
         /* 不需要释放数组内存，重置大小即可 */
+    }
+}
+
+
+/*
+ * 使用逐个插入法构建堆
+ */
+void heap_build_insertion(BinaryHeap* heap, int* arr, size_t n) {
+    if (!heap || !arr || n <= 0) {
+        return;
+    }
+    for (size_t i = 0; i < n; i++) {
+        binary_heap_insert(heap, arr[i]);
+    }
+}
+
+/*
+ * 使用线性建堆法构建堆
+ */
+void heap_build_linear(BinaryHeap* heap, int* arr, size_t n) {
+    if (!heap || !arr || n <= 0) {
+        return;
+    }
+    /* 直接将元素复制到堆数组中 */
+    for (size_t i = 0; i < n; i++) {
+        if (i + 1 >= heap->capacity) { /* 检查容量 */
+            if (binary_heap_resize(heap) != 0) {
+                return; /* 扩容失败 */
+            }
+        }
+        heap->data[i + 1] = arr[i]; /* 索引从1开始 */
+    }
+    heap->size = n;
+    /* 从最后一个非叶子节点开始下沉调整堆 */
+    for (size_t i = heap->size / 2; i > 0; i--) {
+        heapify_down(heap->data, i, heap->size);
     }
 }
