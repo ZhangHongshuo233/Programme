@@ -4,6 +4,8 @@
 
 #define MAXN 1000
 
+static int arr[MAXN];   
+static int pos =0;
 typedef struct seqque{
     int* data;
     int front;
@@ -73,7 +75,7 @@ CBST* tree_create(int n){
 void inorder_traversal(CBST* tree, int index){
     if(index == -1) return;
     inorder_traversal(tree, tree->nodes[index].left);
-    scanf("%d", &tree->nodes[index].key);
+    tree->nodes[index].key = arr[pos++];
     inorder_traversal(tree, tree->nodes[index].right);
 }
 
@@ -106,9 +108,16 @@ void LevelOrderTraversal(CBST* tree){
     queue_destroy(queue);
 }
     
+int cmp(const void* a, const void* b){
+    return (*(int*)a - *(int*)b);
+}
 int main(){
     int n;
     scanf("%d",&n);
+    for(int i = 0; i < n; i++){
+        scanf("%d", &arr[i]);
+    }
+    qsort(arr, n, sizeof(int), cmp);
     CBST* tree = tree_create(n);
     inorder_traversal(tree, 0);
     LevelOrderTraversal(tree);
