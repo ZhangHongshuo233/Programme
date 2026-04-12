@@ -59,12 +59,50 @@ class TreeNode:
                 stack.append(node.right)
         return res[::-1]
     
-    def postorder_iterative(self, root):
+    def postorder_iterative2(self, root):
         if not root:
             return []
         stack1, stack2, res = [root], [], []
         while stack1:
             node = stack1.pop()
+            stack2.append((node))
+            if node.left:
+                stack1.append(node.left)
+            if node.right:
+                stack1.append(node.right)
+        while stack2:
+            node = stack2.pop()
+            res.append(node.val)
+        return res
+    
+    def postorder_iterative3(self, root):
+        if not root:
+            return []
+        stack, res = [], []
+        stack.append((root, False))
+        while stack:
+            node, visited = stack.pop()
+            if node:
+                if visited:
+                    res.append(node.val)
+                else:
+                    stack.append((node, True))
+                    stack.append((node.right,False))
+                    stack.append((node.left, False))
+        return res
+    
+    def postorder_iterative4(self, root):
+        if not root:
+            return []
+        stack, res = [], []
+        cur, prev = root, None
+        while stack or cur:
+            while cur:
+                stack.append(cur)
+                cur = cur.left
+            if(not cur.right or not prev == cur.right):
+
+
             
 
     
