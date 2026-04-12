@@ -4,10 +4,6 @@
 #include <stdbool.h>
 #include <stddef.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 /* 堆结构体（不透明指针，隐藏实现细节） */
 typedef struct BinaryHeap BinaryHeap;
 
@@ -62,8 +58,18 @@ size_t binary_heap_size(const BinaryHeap* heap);
  */
 void binary_heap_clear(BinaryHeap* heap);
 
-#ifdef __cplusplus
-}
-#endif
+/*
+ * 使用逐个建堆法构建堆。
+ * 将数组中的元素逐个插入堆中，每次插入后调整堆以满足最小堆性质。
+ * 成功返回 0，失败返回 -1。
+ */
+int heap_build_insertion(BinaryHeap* heap, const int* values, size_t count);
+
+/*
+ * 使用线性建堆法构建堆。
+ * 将数组中的元素一次性插入堆中，然后调整堆以满足最小堆性质。
+ * 成功返回 0，失败返回 -1。
+ */ 
+int heap_build_linear(BinaryHeap* heap, const int* values, size_t count);
 
 #endif /* BINARY_HEAP_H */
