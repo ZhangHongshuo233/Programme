@@ -1,6 +1,6 @@
 param(
     [string]$RepoPath = "C:\Users\Lenovo\Desktop\programme",
-    [string]$Branch = "main"
+    [string]$Branch = ""
 )
 
 $ErrorActionPreference = "Stop"
@@ -14,6 +14,15 @@ Set-Location $RepoPath
 
 if (-not (Test-Path ".git")) {
     Write-Error "Not a git repository: $RepoPath"
+    exit 1
+}
+
+if ([string]::IsNullOrWhiteSpace($Branch)) {
+    $Branch = (git branch --show-current).Trim()
+}
+
+if ([string]::IsNullOrWhiteSpace($Branch)) {
+    Write-Error "Unable to determine the current branch. Pass -Branch explicitly."
     exit 1
 }
 
