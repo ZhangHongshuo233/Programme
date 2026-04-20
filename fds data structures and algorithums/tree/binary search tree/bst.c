@@ -10,7 +10,7 @@ BST* CreateBST(){
     return bst;
 }
 
-static CreateNode(int val){
+static int CreateNode(int val){
     Node* node = (Node*)malloc(sizeof(Node));
     node->key = val;
     node->left = node->right = NULL;
