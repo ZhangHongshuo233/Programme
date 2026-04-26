@@ -63,7 +63,7 @@ void Union(DisjointSet* ds, int root1, int root2){
         ds->parent[r2] = r1;
     }
 }
-
+  
 void DestroyDisjointSet(DisjointSet* ds) {
     if(ds == NULL) {
         return;
