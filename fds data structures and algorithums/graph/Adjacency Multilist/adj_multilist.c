@@ -37,7 +37,7 @@ void AddEdge(AdjMultilist* graph, int src, int dest) {
 }
 
 // 打印所有物理存在的边 (展示多重表的优势：每条边只会被处理一次)
-void PrintMultilistEdges(AdjacencyMultilist* graph) {
+void PrintMultilistEdges(AdjMultilist* graph) {
     if (!graph) return;
     printf("========== 邻接多重表：全局边库 ==========\n");
     // 重置所有边的 mark 为 0 (防御性编程)
@@ -65,17 +65,30 @@ void PrintMultilistEdges(AdjacencyMultilist* graph) {
     printf("==========================================\n");
 }
 
-// 打印所有物理存在的边 (展示多重表的优势：每条边只会被处理一次)
-void PrintMultilistEdges(AdjacencyMultilist* graph) {
+// 释放多重表内存 (极其考验内功的一环)
+void DestroyMultilist(AdjMultilist* graph) {
     if (!graph) return;
-    printf("========== 邻接多重表：全局边库 ==========\n");
-    // 重置所有边的 mark 为 0 (防御性编程)
-    // 实际工业中，通常在遍历时通过 mark 来防重
     
-    int edgeCount = 1;
-    for(int i = 0; i < graph->numEdges; i++) {
+    // 释放多重表的边需要特别小心，因为一条边被两个顶点共享。
+    // 绝不能对同一块内存 free 两次 (Use-After-Free 漏洞)。
+    // 这里使用一个数学取巧：只在顶点的编号等于边的最小编号时，才释放它。
+    for (int i = 0; i < graph->numVertices; i++) {
         EdgeNode* curr = graph->array[i].firstedge;
-        while(curr != )
+        while (curr != NULL) {
+            EdgeNode* next;
+            // 找出下一条边
+            if (curr->ivex == i) next = curr->ilink;
+            else next = curr->jlink;
 
+            // 比较巧妙的安全释放法：只由编号较小的顶点负责释放这条边的内存
+            // 这样就能保证一条边绝对只会被 free 一次，且无需依赖 mark
+            int min_vex = (curr->ivex < curr->jvex) ? curr->ivex : curr->jvex;
+            if (min_vex == i) {
+                free(curr); 
+            }
+            curr = next;
+        }
     }
+    free(graph->array);
+    free(graph);
 }
