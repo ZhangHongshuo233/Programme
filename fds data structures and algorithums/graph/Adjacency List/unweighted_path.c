@@ -73,6 +73,7 @@ void UnweightedBasic(Graph* graph, int startVertex) {
     free(table);
 }
 
+/* 改进版无权最短路径 (使用数组模拟队列) */
 void UnweightedOptimized(Graph* graph, int startVertex) {
     if(!graph || startVertex >= graph->V) return;
 
@@ -123,3 +124,4 @@ void UnweightedOptimized(Graph* graph, int startVertex) {
     free(queue);
     free(table);
 }
+    
