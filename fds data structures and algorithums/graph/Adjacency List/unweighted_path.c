@@ -1,19 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
-#include "adj_list.h"
-
-#define INF INT_MAX // 用最大整数代表无穷大
-
-/* 对应幻灯片中的 Table 结构，用于记录算法运行状态 */
-typedef struct VertexInfo {
-    int dist;   /* 到源点的最短距离 */
-    int known;  /* 是否已被处理 (1为是，0为否) */
-    int path;   /* 记录前驱顶点，用于倒推路径 */
-} VertexInfo;
+#include "shortest_path.h"
 
 /* 内部辅助函数：打印最终的距离和路径状态 */
-void PrintTable(VertexInfo* table, int V, int startVertex) {
+void PrintTable(VertexInfo* table, int V, int startVertex, const char* algoName) {
+    printf("========== %s (起点 %d) ==========\n", algoName, startVertex);
     printf("Vertex\tknown\tdist\tpath\n");
     for(int i = 0; i < V; i++) {
         printf("%d\t%d\t", i, table[i].known);
@@ -69,7 +61,7 @@ void UnweightedBasic(Graph* graph, int startVertex) {
         }
     }
     printf("========== 基础版最短路径 (起点 %d) ==========\n", startVertex);
-    PrintTable(table, V, startVertex);
+    PrintTable(table, V, startVertex, "无权基础版");
     free(table);
 }
 
@@ -119,7 +111,7 @@ void UnweightedOptimized(Graph* graph, int startVertex) {
         }
     }
     printf("========== 队列版最短路径 (起点 %d) ==========\n", startVertex);
-    PrintTable(table, V, startVertex);
+    PrintTable(table, V, startVertex, "无权队列优化版");
     
     free(queue);
     free(table);
