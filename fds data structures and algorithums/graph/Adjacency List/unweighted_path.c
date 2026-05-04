@@ -13,7 +13,7 @@ typedef struct VertexInfo {
 } VertexInfo;
 
 /* 内部辅助函数：打印最终的距离和路径状态 */
-static void PrintTable(VertexInfo* table, int V, int startVertex) {
+void PrintTable(VertexInfo* table, int V, int startVertex) {
     printf("Vertex\tknown\tdist\tpath\n");
     for(int i = 0; i < V; i++) {
         printf("%d\t%d\t", i, table[i].known);
