@@ -20,7 +20,7 @@ void PrintTable(VertexInfo* table, int V, int startVertex, const char* algoName)
 void UnweightedBasic(Graph* graph, int startVertex);
 void UnweightedOptimized(Graph* graph, int startVertex);
 
-// void DijkstraBasic(Graph* graph, int startVertex);
-// void DijkstraOptimized(Graph* graph, int startVertex);
+void DijkstraBasic(Graph* graph, int startVertex);
+void DijkstraOptimized(Graph* graph, int startVertex);
 
 #endif // SHORTEST_PATH_H
