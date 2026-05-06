@@ -133,41 +133,9 @@ int IsDijkstraSequence(Graph* graph, int* seq, int seqLen) {
 
     int V = graph->V;
     int* dist = (int*)malloc(V * sizeof(int));
-    int* known = (int*)calloc(V, sizeof(int));
+    int* visited = (int*)calloc(V, sizeof(int));
 
-    if(!dist || !known) return 0;
-
-    /* 1. 初始化距离表，全部设为无穷大 */
-    for (int i = 0; i < V; i++) {
-        dist[i] = INF;
-    }
-
-    /* 2. 序列的第一个顶点就是起点，距离设为 0 */
-    dist[seq[0]] = 0;
-
-
-
-}
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <limits.h>
-#include "shortest_path.h" /* 包含 Graph, AdjListNode 等定义 */
-
-/* * 判断给定的顶点序列 seq 是否为合法的 Dijkstra 序列
- * graph: 你的加权图指针
- * seq: 待验证的顶点数组
- * seqLen: 序列的长度 (通常等于顶点数 V)
- * 返回值: 1 表示合法，0 表示非法
- */
-int IsDijkstraSequence(Graph* graph, int* seq, int seqLen) {
-    if (!graph || !seq || seqLen <= 0 || seqLen > graph->V) return 0;
-
-    int V = graph->V;
-    int* dist = (int*)malloc(V * sizeof(int));
-    int* visited = (int*)calloc(V, sizeof(int)); /* calloc 自动初始化为 0 */
-    
-    if (!dist || !visited) return 0;
+    if(!dist || !visited) return 0;
 
     /* 1. 初始化距离表，全部设为无穷大 */
     for (int i = 0; i < V; i++) {
@@ -178,48 +146,49 @@ int IsDijkstraSequence(Graph* graph, int* seq, int seqLen) {
     dist[seq[0]] = 0;
 
     /* 3. 按照序列顺序，逐个验证 */
-    for (int i = 0; i < seqLen; i++) {
+    for(int i = 0; i < seqLen; i++) {
         int v = seq[i];
 
         /* 错误情况1：该节点已经被访问过了 (序列里有重复节点) */
-        if (visited[v]) {
-            free(dist); free(visited);
+        if(visited[v]) {
+            free(dist);
+            free(visited);
             return 0;
         }
 
+        visited[v] = 1;
+
         /* 动作1：在所有未访问的节点中，找出当前的最小距离 */
         int minDist = INF;
-        for (int j = 0; j < V; j++) {
-            if (!visited[j] && dist[j] < minDist) {
+        for(int j = 0; j < V; j++) {
+            if(!visited[j] && dist[j] < minDist) {
                 minDist = dist[j];
             }
         }
 
         /* 动作2：严格审查！
          * 如果当前节点 v 的距离大于全场的最小距离，说明它“插队”了！违背贪心原则。 */
-        if (dist[v] > minDist) {
-            free(dist); free(visited);
-            return 0; /* 验证失败，不是 Dijkstra 序列 */
+        if(dist[v] > minDist) {
+            free(dist);
+            free(visited);
+            return 0;   /* 验证失败，不是 Dijkstra 序列 */
         }
-
-        /* 审查通过，标记为已访问 */
-        visited[v] = 1;
 
         /* 动作3：顺藤摸瓜，松弛它的所有邻居 */
         AdjListNode* curr = graph->array[v].head;
-        while (curr) {
+        while(curr) {
             int w = curr->dest;
             int weight = curr->weight;
-            
+
             /* 注意防范 dist[v] 是 INF 时的整数溢出 */
-            if (!visited[w] && dist[v] != INF && dist[v] + weight < dist[w]) {
+            if(!visited[w] && dist[v] != INF && dist[v] + weight < dist[w]) {
                 dist[w] = dist[v] + weight;
             }
             curr = curr->next;
         }
     }
-
     /* 如果整个序列都顺利扛过了审查，那就是合法的！ */
-    free(dist); free(visited);
-    return 1;
+    free(dist); 
+    free(visited);
+    return 1;    
 }
