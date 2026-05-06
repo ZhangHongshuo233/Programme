@@ -32,10 +32,12 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+#include <limits.h>
 
 /* ---------- Compile-time constants ---------- */
 #define MAXV 1005          /* Maximum number of vertices (1-indexed)        */
-#define INF  0x3f3f3f3f   /* Sentinel for "infinite" distance               */
+#define INF (INT_MAX >> 1) /* Sentinel for "infinite" distance               */
 
 /* ---------- Global variables ----------
  * Using global scope to avoid stack overflow for large arrays.
