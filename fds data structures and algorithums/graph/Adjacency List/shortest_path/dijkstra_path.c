@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "min_heap.h"
+#include "C:\Users\Lenovo\Desktop\programme\fds data structures and algorithums\heap\binary heap\min_heap\min_heap.h"
 #include "shortest_path.h"
 
 void DijkstraBasic(Graph* graph, int startVertex) {
