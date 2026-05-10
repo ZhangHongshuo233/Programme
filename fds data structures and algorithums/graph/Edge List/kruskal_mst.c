@@ -1,1 +1,4 @@
 #include "C:\Users\Lenovo\Desktop\programme\fds data structures and algorithums\disjoint set union\disjoint_set.h"
+#include <stdio.h>
+#include <stdlib.h>
+
