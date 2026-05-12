@@ -3,6 +3,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
+
+#define INF (INT_MAX >> 1)
 
 typedef struct Edge {
     int src;
