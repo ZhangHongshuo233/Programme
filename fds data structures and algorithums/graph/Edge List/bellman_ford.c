@@ -122,7 +122,7 @@ int main() {
      * =================================================== */
     printf("【测试用例 2】带有负权环的图\n");
     int V2 = 4;
-    int E2 = 4;
+    int E2 = 5;
     EdgeGraph* graph2 = CreateEdgeGraph(V2, E2);
 
     AddEdgeToGraph(graph2, 1, 2, 4);
