@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "edge_list.h"
+#include "../edge_list.h"
 #include <stdbool.h>
 
 /* 内部辅助函数：打印最终的距离和路径状态 */

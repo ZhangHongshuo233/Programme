@@ -1,7 +1,7 @@
 #ifndef SHORTEST_PATH_H
 #define SHORTEST_PATH_H
 
-#include "adj_list.h"
+#include "../adj_list.h"
 #include <limits.h>
 
 #define INF INT_MAX

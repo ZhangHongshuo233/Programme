@@ -29,4 +29,7 @@ void AddEdge(Graph* graph, int src, int dest, int weight);
 void PrintGraph(Graph* graph);
 void DestroyGraph(Graph* graph);
 
+/* 添加有向加权边 (专门用于包含负权边的有向图) */
+void AddDirectedEdge(Graph* graph, int src, int dest, int weight);
+
 #endif // ADJ_LIST_H

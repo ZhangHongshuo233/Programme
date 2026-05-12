@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "adj_list.h"
+#include "../adj_list.h"
 
 // 拓扑排序 (返回 1 表示成功，返回 0 表示图中有环)
 int TopologicalSort(Graph* graph, int* result) {

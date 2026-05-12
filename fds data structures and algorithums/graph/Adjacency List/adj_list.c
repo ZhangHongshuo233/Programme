@@ -74,3 +74,13 @@ void DestroyGraph(Graph* graph) {
     free(graph->array);
     free(graph);
 }
+
+/* 添加有向加权边 */
+void AddDirectedEdge(Graph* graph, int src, int dest, int weight) {
+    if (!graph || src >= graph->V || dest >= graph->V) return;
+
+    /* 只有 src -> dest，没有 dest -> src */
+    AdjListNode* newNode = CreateNode(dest, weight);
+    newNode->next = graph->array[src].head;
+    graph->array[src].head = newNode;
+}
