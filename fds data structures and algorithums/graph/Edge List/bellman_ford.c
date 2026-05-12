@@ -27,6 +27,8 @@ static void PrintResult(int V, int startVertex, int* dist, int* path) {
 
 
 /* * Bellman-Ford 算法核心实现
+ * 时间复杂度: O(V * E)
+ * 空间复杂度: O(V) 
  * 参数: graph (边集图), startVertex (起点编号)
  * 返回值: 如果图中存在从起点可达的负权环，返回 false；否则返回 true
  */
