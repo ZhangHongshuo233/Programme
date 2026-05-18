@@ -135,6 +135,7 @@ void CriticalPathMethod(Graph* graph) {
 int main() {
     int V = 9; 
     Graph* graph = CreateGraph(V + 1);
+    graph->V = V; /* 设置顶点数为 9，顶点编号从 1 到 9 */
 
     /* 构造一个 AOE 网 (有向无环图)，注意这里使用的是单向边！
      * 请确保你的底层含有 AddDirectedEdge 函数 */
