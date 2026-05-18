@@ -9,7 +9,7 @@ void CriticalPathMethod(Graph* graph) {
     if(!graph) return;
 
     int V = graph->V;
-    int* inDegree = (int*)calloc(V, sizeof(int));
+    int* inDegree = (int*)calloc(V + 1, sizeof(int));
     int* EC = (int*)calloc((V + 1), sizeof(int)); /*最早发生时间 */
     int* LC = (int*)malloc((V + 1) * sizeof(int)); /* 最迟发生时间 */
     int* topOrder = (int*)malloc((V + 1) * sizeof(int)); /* 存储拓扑序列，用于倒推 */
@@ -134,7 +134,7 @@ void CriticalPathMethod(Graph* graph) {
  * ========================================== */
 int main() {
     int V = 9; 
-    Graph* graph = CreateGraph(V);
+    Graph* graph = CreateGraph(V + 1);
 
     /* 构造一个 AOE 网 (有向无环图)，注意这里使用的是单向边！
      * 请确保你的底层含有 AddDirectedEdge 函数 */
