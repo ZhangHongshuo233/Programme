@@ -38,6 +38,10 @@ add_executable(test_bellman      "graph/Edge List/edge_list.c" "graph/Edge List/
 add_executable(test_kruskal      "graph/Edge List/edge_list.c" "disjoint set union/disjoint_set.c" "graph/Edge List/minimum_spanning_tree/kruskal_mst.c")
 add_executable(test_topological  "graph/Adjacency List/adj_list.c" "graph/Adjacency List/topological_sort/topological_sort.c")
 add_executable(test_cpm "graph/Adjacency List/adj_list.c" "graph/Adjacency List/topological_sort/critical_path.c")
+add_executable(test_ff_naive    "graph/Network Flow/ford_fulkerson_naive.c")
+add_executable(test_ek          "graph/Network Flow/edmonds_karp.c")
+add_executable(test_max_cap     "graph/Network Flow/max_capacity_path.c")
+add_executable(test_mcmf        "graph/Network Flow/min_cost_max_flow.c")
 
 # ----------------- [2] 基础数据结构测试 -----------------
 # 栈与队列
