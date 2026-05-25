@@ -48,7 +48,7 @@ int dfs(int u, int t, int flow, bool visited[],
 
 /* 朴素 Ford-Fulkerson 算法 */
 int FordFulkerson_Naive(int V, int graph[MAX_V][MAX_V], int s, int t){
-    int residual[MAX_V][MAX_V];\
+    int residual[MAX_V][MAX_V];
     for (int i = 0; i < V; i++)
         for (int j = 0; j < V; j++)
             residual[i][j] = graph[i][j];
