@@ -42,8 +42,9 @@ add_executable(test_ff_naive    "graph/Network Flow/ford_fulkerson_naive.c")
 add_executable(test_ek          "graph/Network Flow/edmonds_karp.c")
 add_executable(test_max_cap     "graph/Network Flow/max_capacity_path.c")
 add_executable(test_mcmf        "graph/Network Flow/min_cost_max_flow.c")
-add_executable(test_prim        "graph/Adjacency List/adj_list.c" "graph/Adjacency List/minimum_spanning_tree/prim_mst.c" "heap/binary heap/min_heap/min_heap.c"
-)
+add_executable(test_prim        "graph/Adjacency List/adj_list.c" "graph/Adjacency List/minimum_spanning_tree/prim_mst.c" "heap/binary heap/min_heap/min_heap.c")
+
+
 
 # ----------------- [2] 基础数据结构测试 -----------------
 # 栈与队列
