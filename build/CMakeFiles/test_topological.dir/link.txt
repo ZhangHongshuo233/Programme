@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\test_topological.dir/objects.a
+C:\mingw64\bin\ar.exe qc CMakeFiles\test_topological.dir/objects.a @CMakeFiles\test_topological.dir\objects1.rsp
+C:\mingw64\bin\gcc.exe -g  -Wl,--subsystem,console -Wl,--whole-archive CMakeFiles\test_topological.dir/objects.a -Wl,--no-whole-archive -o test_topological.exe -Wl,--out-implib,libtest_topological.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\test_topological.dir\linkLibs.rsp

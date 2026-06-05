@@ -14,9 +14,9 @@ int main() {
     datatype data2 = {2, "Second"};
     datatype data3 = {3, "Third"};
 
-    push(stack, &data1);
-    push(stack, &data2);
-    push(stack, &data3);
+    Push(stack, &data1);
+    Push(stack, &data2);
+    Push(stack, &data3);
 
     printf("Stack size: %d\n", GetSize(stack));
 
@@ -26,13 +26,13 @@ int main() {
     }
 
     while (!IsEmpty(stack)) {
-        if (pop(stack, &topData) == 0) {
+        if (Pop(stack, &topData) == 0) {
             printf("Popped element: id=%d, name=%s\n", topData.val, topData.name);
         }
     }
 
     printf("Stack size after popping all elements: %d\n", GetSize(stack));
-    clearStack(stack);
+    ClearStack(stack);
     free(stack);
     return 0;
 }

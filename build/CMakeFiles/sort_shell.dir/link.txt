@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\sort_shell.dir/objects.a
+C:\mingw64\bin\ar.exe qc CMakeFiles\sort_shell.dir/objects.a @CMakeFiles\sort_shell.dir\objects1.rsp
+C:\mingw64\bin\gcc.exe -g  -Wl,--subsystem,console -Wl,--whole-archive CMakeFiles\sort_shell.dir/objects.a -Wl,--no-whole-archive -o sort_shell.exe -Wl,--out-implib,libsort_shell.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\sort_shell.dir\linkLibs.rsp

@@ -16,6 +16,12 @@ tree_test
 *.gcno
 *.gcov
 
+# Python virtual environments (非常重要！)
+.venv/
+venv/
+env/
+ENV/
+
 # Python cache
 __pycache__/
 *.pyc

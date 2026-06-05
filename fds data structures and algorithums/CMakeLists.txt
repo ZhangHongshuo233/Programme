@@ -2,6 +2,11 @@
 cmake_minimum_required(VERSION 3.10)
 project(FDS_Algorithms C)
 
+# 显式强制编译器使用标准控制台连接器，彻底抹除 WinMain 导致的编译假死
+if(WIN32 AND CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
+    string(APPEND CMAKE_EXE_LINKER_FLAGS " -Wl,--subsystem,console")
+endif()
+
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_C_STANDARD_REQUIRED True)
 
@@ -33,15 +38,15 @@ include_directories(
 
 # ----------------- [1] 图论算法 (Graph) -----------------
 add_executable(test_spfa         "graph/Adjacency List/adj_list.c" "graph/Adjacency List/shortest_path/spfa_path.c")
-add_executable(test_dijkstra     "graph/Adjacency List/adj_list.c" "heap/binary heap/min_heap/min_heap.c" "graph/Adjacency List/shortest_path/dijkstra_path.c")
+add_executable(test_dijkstra     "graph/Adjacency List/adj_list.c" "heap/binary heap/min_heap/min_heap.c" "graph/Adjacency List/shortest_path/dijkstra_path.c" "graph/Adjacency List/shortest_path/unweighted_path.c" "graph/Adjacency List/shortest_path/dijkstra_main.c")
 add_executable(test_bellman      "graph/Edge List/edge_list.c" "graph/Edge List/shortest_path/bellman_ford.c")
-add_executable(test_kruskal      "graph/Edge List/edge_list.c" "disjoint set union/disjoint_set.c" "graph/Edge List/minimum_spanning_tree/kruskal_mst.c")
-add_executable(test_topological  "graph/Adjacency List/adj_list.c" "graph/Adjacency List/topological_sort/topological_sort.c")
+add_executable(test_kruskal      "graph/Edge List/edge_list.c" "disjoint set union/disjoint_set.c" "graph/Edge List/minimum_spanning_tree/kruskal_mst.c" "graph/Edge List/minimum_spanning_tree/kruskal_main.c")
+add_executable(test_topological  "graph/Adjacency List/adj_list.c" "graph/Adjacency List/topological_sort/topological_sort.c" "graph/Adjacency List/topological_sort/topological_main.c")
 add_executable(test_cpm "graph/Adjacency List/adj_list.c" "graph/Adjacency List/topological_sort/critical_path.c")
-add_executable(test_ff_naive    "graph/Network Flow/Ford_fulkerson_naive/ford_fulkerson_naive.c")
-add_executable(test_ek          "graph/Network Flow/Edmonds-Karp/edmonds_karp.c")
-add_executable(test_max_cap     "graph/Network Flow/max_capacity_path/max_capacity_path.c")
-add_executable(test_mcmf        "graph/Network Flow/Min_cost_max_flow/min_cost_max_flow.c")
+add_executable(test_ff_naive    "graph/Network Flow/Ford_fulkerson_naive/ford_fulkerson_naive.c" "graph/Network Flow/Ford_fulkerson_naive/ford_main.c")
+add_executable(test_ek          "graph/Network Flow/Edmonds-Karp/edmonds_karp.c" "graph/Network Flow/Edmonds-Karp/edmonds_main.c")
+add_executable(test_max_cap     "graph/Network Flow/max_capacity_path/max_capacity_path_linear.c" "graph/Network Flow/max_capacity_path/max_capacity_main.c")
+add_executable(test_mcmf        "graph/Network Flow/Min_cost_max_flow/min_cost_max_flow.c" "graph/Network Flow/Min_cost_max_flow/mcmf_main.c")
 add_executable(test_prim        "graph/Adjacency List/adj_list.c" "graph/Adjacency List/minimum_spanning_tree/prim_mst.c" "heap/binary heap/min_heap/min_heap.c")
 
 
@@ -71,14 +76,15 @@ add_executable(test_bintree
     "tree/binary tree/binary tree.c" 
     "tree/binary tree/RebuildTree.c" 
     "tree/binary tree/main.c" 
-    "queue/linkque.c" 
-    "stack/linkstack.c"
+    "tree/binary tree/linkque.c" 
+    "tree/binary tree/linkstack.c"
 )
 
 # ----------------- [4] 排序算法 (Sort) -----------------
 # 假设你的每一个排序文件里都有自己独立的 main 函数
-add_executable(sort_bubble    "Sort/Bubble_Sort.c")
-add_executable(sort_heap      "Sort/Heap_Sort.c")
-add_executable(sort_insertion "Sort/Insertion_Sort.c")
-add_executable(sort_quick     "Sort/Quick_Sort.c")
-add_executable(sort_selection "Sort/Selection_Sort.c")
+# ----------------- [4] 排序算法 (Sort) -----------------
+add_executable(sort_heap      "Sort/Heap_Sort/Heap_Sort.c" "Sort/Heap_Sort/heap_sort_main.c")
+add_executable(sort_insertion "Sort/Insertion_Sort/Insertion_Sort.c")
+add_executable(sort_quick     "Sort/Quick_Sort/Quick_Sort.c")
+add_executable(sort_selection "Sort/Selection_Sort/Selection_Sort.c")
+

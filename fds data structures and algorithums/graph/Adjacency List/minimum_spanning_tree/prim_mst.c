@@ -11,7 +11,7 @@
  * Prim 最小生成树算法核心
  ********************/
 int PrimMST(Graph* graph, int startVertex) {
-    if(!graph || startVertex <= 0 || startVertex > graph->V) return -1;
+    if(!graph || startVertex < 0 || startVertex >= graph->V) return -1;
 
     int V = graph->V;
     int* parent = (int*)malloc((V + 1) * sizeof(int));
@@ -19,7 +19,7 @@ int PrimMST(Graph* graph, int startVertex) {
     bool* visited = (bool*)calloc(V + 1, sizeof(bool));
 
     /* 初始化 */
-    for(int i = 1; i <= V; i++) {
+    for(int i = 0; i < V; i++) {
         cost[i] = INF;
         parent[i] = -1;
     }
@@ -43,7 +43,7 @@ int PrimMST(Graph* graph, int startVertex) {
         int u = curr.vertex;
 
         /*懒惰删除：如果这个节点已经在树里了，说明这是旧数据，直接丢弃*/
-        if(visited[u]) continue;
+        if(u < 0 || u >= V || visited[u]) continue;
 
         /* 标记该节点已加入树中 */
         visited[u] = true;
@@ -101,20 +101,20 @@ int main() {
     Graph* graph = CreateGraph(V);
 
     /* 录入课件 PPT 中的无向连通图数据 */
-    AddEdge(graph, 1, 2, 2);
-    AddEdge(graph, 1, 3, 4);
-    AddEdge(graph, 1, 4, 1);
-    AddEdge(graph, 2, 4, 3);
-    AddEdge(graph, 2, 5, 10);
-    AddEdge(graph, 3, 4, 2);
-    AddEdge(graph, 3, 6, 5);
-    AddEdge(graph, 4, 5, 7);
-    AddEdge(graph, 4, 6, 8);
-    AddEdge(graph, 4, 7, 4);
-    AddEdge(graph, 5, 7, 6);
-    AddEdge(graph, 6, 7, 1);
+    AddEdge(graph, 0, 1, 2);
+    AddEdge(graph, 0, 2, 4);
+    AddEdge(graph, 0, 3, 1);
+    AddEdge(graph, 1, 3, 3);
+    AddEdge(graph, 1, 4, 10);
+    AddEdge(graph, 2, 3, 2);
+    AddEdge(graph, 2, 5, 5);
+    AddEdge(graph, 3, 4, 7);
+    AddEdge(graph, 3, 5, 8);
+    AddEdge(graph, 3, 6, 4);
+    AddEdge(graph, 4, 6, 6);
+    AddEdge(graph, 5, 6, 1);
 
-    PrimMST(graph, 1);
+    PrimMST(graph, 0);
 
     DestroyGraph(graph);
     return 0;

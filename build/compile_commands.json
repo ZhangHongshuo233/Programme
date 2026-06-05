@@ -1,0 +1,332 @@
+[
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_spfa.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_spfa.dir\\graph\\Adjacency_List\\adj_list.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\graph\\Adjacency List\\adj_list.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/graph/Adjacency List/adj_list.c",
+  "output": "CMakeFiles/test_spfa.dir/graph/Adjacency_List/adj_list.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_spfa.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_spfa.dir\\graph\\Adjacency_List\\shortest_path\\spfa_path.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\graph\\Adjacency List\\shortest_path\\spfa_path.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/graph/Adjacency List/shortest_path/spfa_path.c",
+  "output": "CMakeFiles/test_spfa.dir/graph/Adjacency_List/shortest_path/spfa_path.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_dijkstra.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_dijkstra.dir\\graph\\Adjacency_List\\adj_list.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\graph\\Adjacency List\\adj_list.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/graph/Adjacency List/adj_list.c",
+  "output": "CMakeFiles/test_dijkstra.dir/graph/Adjacency_List/adj_list.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_dijkstra.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_dijkstra.dir\\heap\\binary_heap\\min_heap\\min_heap.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\heap\\binary heap\\min_heap\\min_heap.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/heap/binary heap/min_heap/min_heap.c",
+  "output": "CMakeFiles/test_dijkstra.dir/heap/binary_heap/min_heap/min_heap.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_dijkstra.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_dijkstra.dir\\graph\\Adjacency_List\\shortest_path\\dijkstra_path.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\graph\\Adjacency List\\shortest_path\\dijkstra_path.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/graph/Adjacency List/shortest_path/dijkstra_path.c",
+  "output": "CMakeFiles/test_dijkstra.dir/graph/Adjacency_List/shortest_path/dijkstra_path.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_dijkstra.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_dijkstra.dir\\graph\\Adjacency_List\\shortest_path\\unweighted_path.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\graph\\Adjacency List\\shortest_path\\unweighted_path.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/graph/Adjacency List/shortest_path/unweighted_path.c",
+  "output": "CMakeFiles/test_dijkstra.dir/graph/Adjacency_List/shortest_path/unweighted_path.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_dijkstra.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_dijkstra.dir\\graph\\Adjacency_List\\shortest_path\\dijkstra_main.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\graph\\Adjacency List\\shortest_path\\dijkstra_main.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/graph/Adjacency List/shortest_path/dijkstra_main.c",
+  "output": "CMakeFiles/test_dijkstra.dir/graph/Adjacency_List/shortest_path/dijkstra_main.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_bellman.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_bellman.dir\\graph\\Edge_List\\edge_list.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\graph\\Edge List\\edge_list.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/graph/Edge List/edge_list.c",
+  "output": "CMakeFiles/test_bellman.dir/graph/Edge_List/edge_list.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_bellman.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_bellman.dir\\graph\\Edge_List\\shortest_path\\bellman_ford.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\graph\\Edge List\\shortest_path\\bellman_ford.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/graph/Edge List/shortest_path/bellman_ford.c",
+  "output": "CMakeFiles/test_bellman.dir/graph/Edge_List/shortest_path/bellman_ford.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_kruskal.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_kruskal.dir\\graph\\Edge_List\\edge_list.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\graph\\Edge List\\edge_list.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/graph/Edge List/edge_list.c",
+  "output": "CMakeFiles/test_kruskal.dir/graph/Edge_List/edge_list.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_kruskal.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_kruskal.dir\\disjoint_set_union\\disjoint_set.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\disjoint set union\\disjoint_set.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/disjoint set union/disjoint_set.c",
+  "output": "CMakeFiles/test_kruskal.dir/disjoint_set_union/disjoint_set.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_kruskal.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_kruskal.dir\\graph\\Edge_List\\minimum_spanning_tree\\kruskal_mst.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\graph\\Edge List\\minimum_spanning_tree\\kruskal_mst.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/graph/Edge List/minimum_spanning_tree/kruskal_mst.c",
+  "output": "CMakeFiles/test_kruskal.dir/graph/Edge_List/minimum_spanning_tree/kruskal_mst.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_kruskal.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_kruskal.dir\\graph\\Edge_List\\minimum_spanning_tree\\kruskal_main.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\graph\\Edge List\\minimum_spanning_tree\\kruskal_main.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/graph/Edge List/minimum_spanning_tree/kruskal_main.c",
+  "output": "CMakeFiles/test_kruskal.dir/graph/Edge_List/minimum_spanning_tree/kruskal_main.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_topological.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_topological.dir\\graph\\Adjacency_List\\adj_list.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\graph\\Adjacency List\\adj_list.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/graph/Adjacency List/adj_list.c",
+  "output": "CMakeFiles/test_topological.dir/graph/Adjacency_List/adj_list.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_topological.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_topological.dir\\graph\\Adjacency_List\\topological_sort\\topological_sort.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\graph\\Adjacency List\\topological_sort\\topological_sort.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/graph/Adjacency List/topological_sort/topological_sort.c",
+  "output": "CMakeFiles/test_topological.dir/graph/Adjacency_List/topological_sort/topological_sort.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_topological.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_topological.dir\\graph\\Adjacency_List\\topological_sort\\topological_main.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\graph\\Adjacency List\\topological_sort\\topological_main.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/graph/Adjacency List/topological_sort/topological_main.c",
+  "output": "CMakeFiles/test_topological.dir/graph/Adjacency_List/topological_sort/topological_main.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_cpm.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_cpm.dir\\graph\\Adjacency_List\\adj_list.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\graph\\Adjacency List\\adj_list.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/graph/Adjacency List/adj_list.c",
+  "output": "CMakeFiles/test_cpm.dir/graph/Adjacency_List/adj_list.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_cpm.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_cpm.dir\\graph\\Adjacency_List\\topological_sort\\critical_path.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\graph\\Adjacency List\\topological_sort\\critical_path.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/graph/Adjacency List/topological_sort/critical_path.c",
+  "output": "CMakeFiles/test_cpm.dir/graph/Adjacency_List/topological_sort/critical_path.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_ff_naive.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_ff_naive.dir\\graph\\Network_Flow\\Ford_fulkerson_naive\\ford_fulkerson_naive.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\graph\\Network Flow\\Ford_fulkerson_naive\\ford_fulkerson_naive.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/graph/Network Flow/Ford_fulkerson_naive/ford_fulkerson_naive.c",
+  "output": "CMakeFiles/test_ff_naive.dir/graph/Network_Flow/Ford_fulkerson_naive/ford_fulkerson_naive.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_ff_naive.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_ff_naive.dir\\graph\\Network_Flow\\Ford_fulkerson_naive\\ford_main.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\graph\\Network Flow\\Ford_fulkerson_naive\\ford_main.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/graph/Network Flow/Ford_fulkerson_naive/ford_main.c",
+  "output": "CMakeFiles/test_ff_naive.dir/graph/Network_Flow/Ford_fulkerson_naive/ford_main.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_ek.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_ek.dir\\graph\\Network_Flow\\Edmonds-Karp\\edmonds_karp.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\graph\\Network Flow\\Edmonds-Karp\\edmonds_karp.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/graph/Network Flow/Edmonds-Karp/edmonds_karp.c",
+  "output": "CMakeFiles/test_ek.dir/graph/Network_Flow/Edmonds-Karp/edmonds_karp.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_ek.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_ek.dir\\graph\\Network_Flow\\Edmonds-Karp\\edmonds_main.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\graph\\Network Flow\\Edmonds-Karp\\edmonds_main.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/graph/Network Flow/Edmonds-Karp/edmonds_main.c",
+  "output": "CMakeFiles/test_ek.dir/graph/Network_Flow/Edmonds-Karp/edmonds_main.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_max_cap.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_max_cap.dir\\graph\\Network_Flow\\max_capacity_path\\max_capacity_path_linear.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\graph\\Network Flow\\max_capacity_path\\max_capacity_path_linear.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/graph/Network Flow/max_capacity_path/max_capacity_path_linear.c",
+  "output": "CMakeFiles/test_max_cap.dir/graph/Network_Flow/max_capacity_path/max_capacity_path_linear.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_max_cap.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_max_cap.dir\\graph\\Network_Flow\\max_capacity_path\\max_capacity_main.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\graph\\Network Flow\\max_capacity_path\\max_capacity_main.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/graph/Network Flow/max_capacity_path/max_capacity_main.c",
+  "output": "CMakeFiles/test_max_cap.dir/graph/Network_Flow/max_capacity_path/max_capacity_main.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_mcmf.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_mcmf.dir\\graph\\Network_Flow\\Min_cost_max_flow\\min_cost_max_flow.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\graph\\Network Flow\\Min_cost_max_flow\\min_cost_max_flow.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/graph/Network Flow/Min_cost_max_flow/min_cost_max_flow.c",
+  "output": "CMakeFiles/test_mcmf.dir/graph/Network_Flow/Min_cost_max_flow/min_cost_max_flow.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_mcmf.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_mcmf.dir\\graph\\Network_Flow\\Min_cost_max_flow\\mcmf_main.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\graph\\Network Flow\\Min_cost_max_flow\\mcmf_main.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/graph/Network Flow/Min_cost_max_flow/mcmf_main.c",
+  "output": "CMakeFiles/test_mcmf.dir/graph/Network_Flow/Min_cost_max_flow/mcmf_main.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_prim.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_prim.dir\\graph\\Adjacency_List\\adj_list.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\graph\\Adjacency List\\adj_list.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/graph/Adjacency List/adj_list.c",
+  "output": "CMakeFiles/test_prim.dir/graph/Adjacency_List/adj_list.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_prim.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_prim.dir\\graph\\Adjacency_List\\minimum_spanning_tree\\prim_mst.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\graph\\Adjacency List\\minimum_spanning_tree\\prim_mst.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/graph/Adjacency List/minimum_spanning_tree/prim_mst.c",
+  "output": "CMakeFiles/test_prim.dir/graph/Adjacency_List/minimum_spanning_tree/prim_mst.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_prim.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_prim.dir\\heap\\binary_heap\\min_heap\\min_heap.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\heap\\binary heap\\min_heap\\min_heap.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/heap/binary heap/min_heap/min_heap.c",
+  "output": "CMakeFiles/test_prim.dir/heap/binary_heap/min_heap/min_heap.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_stack.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_stack.dir\\stack\\linkstack.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\stack\\linkstack.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/stack/linkstack.c",
+  "output": "CMakeFiles/test_stack.dir/stack/linkstack.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_stack.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_stack.dir\\stack\\Stack_test.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\stack\\Stack_test.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/stack/Stack_test.c",
+  "output": "CMakeFiles/test_stack.dir/stack/Stack_test.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_linkque.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_linkque.dir\\queue\\linkque.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\queue\\linkque.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/queue/linkque.c",
+  "output": "CMakeFiles/test_linkque.dir/queue/linkque.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_linkque.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_linkque.dir\\queue\\linkque_test.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\queue\\linkque_test.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/queue/linkque_test.c",
+  "output": "CMakeFiles/test_linkque.dir/queue/linkque_test.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_doulink.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_doulink.dir\\linklist\\doulink.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\linklist\\doulink.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/linklist/doulink.c",
+  "output": "CMakeFiles/test_doulink.dir/linklist/doulink.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_doulink.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_doulink.dir\\linklist\\doulink_test.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\linklist\\doulink_test.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/linklist/doulink_test.c",
+  "output": "CMakeFiles/test_doulink.dir/linklist/doulink_test.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_hashtable.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_hashtable.dir\\hash_table\\hashtable.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\hash table\\hashtable.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/hash table/hashtable.c",
+  "output": "CMakeFiles/test_hashtable.dir/hash_table/hashtable.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_hashtable.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_hashtable.dir\\hash_table\\hashtable_test.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\hash table\\hashtable_test.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/hash table/hashtable_test.c",
+  "output": "CMakeFiles/test_hashtable.dir/hash_table/hashtable_test.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_hstable.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_hstable.dir\\hash_table\\hstable.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\hash table\\hstable.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/hash table/hstable.c",
+  "output": "CMakeFiles/test_hstable.dir/hash_table/hstable.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_hstable.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_hstable.dir\\hash_table\\hstable_test.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\hash table\\hstable_test.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/hash table/hstable_test.c",
+  "output": "CMakeFiles/test_hstable.dir/hash_table/hstable_test.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_ds.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_ds.dir\\disjoint_set_union\\disjoint_set.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\disjoint set union\\disjoint_set.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/disjoint set union/disjoint_set.c",
+  "output": "CMakeFiles/test_ds.dir/disjoint_set_union/disjoint_set.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_ds.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_ds.dir\\disjoint_set_union\\test_ds.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\disjoint set union\\test_ds.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/disjoint set union/test_ds.c",
+  "output": "CMakeFiles/test_ds.dir/disjoint_set_union/test_ds.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_heap_insert.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_heap_insert.dir\\heap\\binary_heap\\heap_operations.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\heap\\binary heap\\heap_operations.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/heap/binary heap/heap_operations.c",
+  "output": "CMakeFiles/test_heap_insert.dir/heap/binary_heap/heap_operations.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_heap_insert.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_heap_insert.dir\\heap\\binary_heap\\test_insertion.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\heap\\binary heap\\test_insertion.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/heap/binary heap/test_insertion.c",
+  "output": "CMakeFiles/test_heap_insert.dir/heap/binary_heap/test_insertion.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_heap_linear.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_heap_linear.dir\\heap\\binary_heap\\heap_operations.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\heap\\binary heap\\heap_operations.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/heap/binary heap/heap_operations.c",
+  "output": "CMakeFiles/test_heap_linear.dir/heap/binary_heap/heap_operations.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_heap_linear.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_heap_linear.dir\\heap\\binary_heap\\test_linear.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\heap\\binary heap\\test_linear.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/heap/binary heap/test_linear.c",
+  "output": "CMakeFiles/test_heap_linear.dir/heap/binary_heap/test_linear.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_bintree.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_bintree.dir\\tree\\binary_tree\\binary_tree.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\tree\\binary tree\\binary tree.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/tree/binary tree/binary tree.c",
+  "output": "CMakeFiles/test_bintree.dir/tree/binary_tree/binary_tree.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_bintree.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_bintree.dir\\tree\\binary_tree\\RebuildTree.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\tree\\binary tree\\RebuildTree.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/tree/binary tree/RebuildTree.c",
+  "output": "CMakeFiles/test_bintree.dir/tree/binary_tree/RebuildTree.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_bintree.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_bintree.dir\\tree\\binary_tree\\main.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\tree\\binary tree\\main.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/tree/binary tree/main.c",
+  "output": "CMakeFiles/test_bintree.dir/tree/binary_tree/main.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_bintree.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_bintree.dir\\tree\\binary_tree\\linkque.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\tree\\binary tree\\linkque.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/tree/binary tree/linkque.c",
+  "output": "CMakeFiles/test_bintree.dir/tree/binary_tree/linkque.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/test_bintree.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\test_bintree.dir\\tree\\binary_tree\\linkstack.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\tree\\binary tree\\linkstack.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/tree/binary tree/linkstack.c",
+  "output": "CMakeFiles/test_bintree.dir/tree/binary_tree/linkstack.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/sort_heap.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\sort_heap.dir\\Sort\\Heap_Sort\\Heap_Sort.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\Sort\\Heap_Sort\\Heap_Sort.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/Sort/Heap_Sort/Heap_Sort.c",
+  "output": "CMakeFiles/sort_heap.dir/Sort/Heap_Sort/Heap_Sort.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/sort_heap.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\sort_heap.dir\\Sort\\Heap_Sort\\heap_sort_main.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\Sort\\Heap_Sort\\heap_sort_main.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/Sort/Heap_Sort/heap_sort_main.c",
+  "output": "CMakeFiles/sort_heap.dir/Sort/Heap_Sort/heap_sort_main.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/sort_insertion.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\sort_insertion.dir\\Sort\\Insertion_Sort\\Insertion_Sort.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\Sort\\Insertion_Sort\\Insertion_Sort.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/Sort/Insertion_Sort/Insertion_Sort.c",
+  "output": "CMakeFiles/sort_insertion.dir/Sort/Insertion_Sort/Insertion_Sort.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/sort_quick.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\sort_quick.dir\\Sort\\Quick_Sort\\Quick_Sort.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\Sort\\Quick_Sort\\Quick_Sort.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/Sort/Quick_Sort/Quick_Sort.c",
+  "output": "CMakeFiles/sort_quick.dir/Sort/Quick_Sort/Quick_Sort.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/Desktop/programme/build",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/sort_selection.dir/includes_C.rsp -g -std=gnu99 -o CMakeFiles\\sort_selection.dir\\Sort\\Selection_Sort\\Selection_Sort.c.obj -c \"C:\\Users\\Lenovo\\Desktop\\programme\\fds data structures and algorithums\\Sort\\Selection_Sort\\Selection_Sort.c\"",
+  "file": "C:/Users/Lenovo/Desktop/programme/fds data structures and algorithums/Sort/Selection_Sort/Selection_Sort.c",
+  "output": "CMakeFiles/sort_selection.dir/Sort/Selection_Sort/Selection_Sort.c.obj"
+}
+]

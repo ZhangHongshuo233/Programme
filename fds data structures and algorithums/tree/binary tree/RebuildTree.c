@@ -13,7 +13,7 @@ typedef struct TreeNode{
 // 输出：重建后的二叉树根节点
 TreeNode* bulidTreeFromRreIn(char* preorder, char* inorder, int len){
     if(len <= 0){
-        retrun NULL;
+        return NULL;
     }
     //1.创建根结点
     TreeNode* root = (TreeNode*)malloc(sizeof(TreeNode));
