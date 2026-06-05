@@ -83,6 +83,8 @@ Write-Log "Using git executable: $GitExe"
 
 # Ensure background task never opens credential prompts.
 $env:GIT_TERMINAL_PROMPT = "0"
+$env:GCM_INTERACTIVE = "Never"
+$env:GIT_ASKPASS = ""
 
 if (Test-Path $LockFile) {
     Write-Log "SKIP: Previous auto sync process is still running."
@@ -117,7 +119,7 @@ try {
         }
         else {
         $CommitTime = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-        $CommitOutput = & $GitExe commit -m "chore(auto-sync): auto snapshot at $CommitTime" 2>&1
+        $CommitOutput = & $GitExe -c commit.gpgsign=false commit --no-verify -m "chore(auto-sync): auto snapshot at $CommitTime" 2>&1
         if ($LASTEXITCODE -ne 0) {
             Exit-WithLog "ERROR: git commit failed. Output: $((($CommitOutput | Out-String).Trim()))"
         }
@@ -128,7 +130,7 @@ try {
     }
 
     # 2) Rebase onto latest remote branch. Abort immediately on conflict.
-    Run-GitCommand -Arguments @("fetch", "origin", $Branch) -ErrorMessage "ERROR: git fetch failed." | Out-Null
+    Run-GitCommand -Arguments @("-c", "credential.interactive=never", "fetch", "origin", $Branch) -ErrorMessage "ERROR: git fetch failed." | Out-Null
 
     & $GitExe rebase "origin/$Branch" *>&1 | Out-Null
     if ($LASTEXITCODE -ne 0) {
@@ -138,7 +140,7 @@ try {
     }
 
     # 3) Push to remote.
-    & $GitExe push origin $Branch *>&1 | Out-Null
+    & $GitExe -c credential.interactive=never push origin $Branch *>&1 | Out-Null
     if ($LASTEXITCODE -ne 0) {
         Exit-WithLog "ERROR: git push failed. Network issue or rejected."
     }
