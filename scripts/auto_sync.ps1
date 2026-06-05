@@ -1,6 +1,7 @@
 param(
     [string]$Branch = "",
-    [switch]$Silent
+    [switch]$Silent,
+    [string[]]$AllowedBranches = @("main")
 )
 
 if ([string]::IsNullOrEmpty($PSScriptRoot)) {
@@ -102,6 +103,12 @@ try {
     # Automatically use the current branch when no branch is provided.
     if ([string]::IsNullOrWhiteSpace($Branch)) {
         $Branch = (Run-GitCommand -Arguments @("branch", "--show-current") -ErrorMessage "ERROR: Unable to detect current branch.").Trim()
+    }
+
+    # Only proceed if the current branch is in the allowed list.
+    if ($AllowedBranches -and -not ($AllowedBranches -contains $Branch)) {
+        Write-Log "SKIP: Branch '$Branch' is not in AllowedBranches ($([string]::Join(',', $AllowedBranches)))."
+        exit 0
     }
 
     if ([string]::IsNullOrWhiteSpace($Branch)) {
