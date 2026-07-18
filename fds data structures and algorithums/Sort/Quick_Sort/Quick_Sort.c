@@ -1,72 +1,90 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-// 交换两个元素的值
-void swap(int* a, int* b) {
-    int t = *a;
+#define CUTOFF 10 // PPT 第 4 页要求的截断阈值
+
+// 基础原地交换函数
+void Swap(int *a, int *b) {
+    int temp = *a;
     *a = *b;
-    *b = t;
+    *b = temp; 
 }
 
-/*
- * 分区函数 (Partition)
- * arr: 待排序数组
- * low: 起始索引
- * high: 结束索引
- * 返回值: 基准元素排序后的正确索引位置
- */
-int partition(int arr[], int low, int high) {
-    int pivot = arr[high]; // 选择最后一个元素作为基准
-    int i = (low - 1);     // i 是较小元素的索引
-
-    for (int j = low; j <= high - 1; j++) {
-        // 如果当前元素小于或等于基准
-        if (arr[j] <= pivot) {
-            i++; // 移动较小元素的索引
-            swap(&arr[i], &arr[j]);
+// 基础插入排序（用于小数组截断优化）
+void InsertionSort(int A[], int N) {
+    for (int p = 1; p < N; p++) {
+        int temp = A[p];
+        int i;
+        for (i = p; i > 0 && A[i - 1] > temp; i--) {
+            A[i] = A[i - 1];
         }
+        A[i] = temp;
     }
-    // 把基准元素放到正确的位置 (i + 1)
-    swap(&arr[i + 1], &arr[high]);
-    return (i + 1);
 }
 
-/*
- * 快速排序主函数
- * arr: 待排序数组
- * low: 起始索引
- * high: 结束索引
- */
-void quickSort(int arr[], int low, int high) {
-    if (low < high) {
-        // pi 是分区索引，arr[pi] 已经在正确的位置
-        int pi = partition(arr, low, high);
+// 1. 三数取中法选择主元 (PPT 第 2 页)
+int Median3(int A[], int Left, int Right) {
+    int Center = Left + (Right - Left) / 2;
+    
+    // 对左、中、右三数进行排序
+    if (A[Left] > A[Center]) Swap(&A[Left], &A[Center]);
+    if (A[Left] > A[Right])  Swap(&A[Left], &A[Right]);
+    if (A[Center] > A[Right]) Swap(&A[Center], &A[Right]);
+    
+    // 将主元 Pivot 隐藏到倒数第二个位置 (Right - 1)
+    Swap(&A[Center], &A[Right - 1]);
+    return A[Right - 1]; // 返回主元
+}
 
-        // 递归排序基准左边的子数组
-        quickSort(arr, low, pi - 1);
+// 快速排序核心递归体
+void QSort(int A[], int Left, int Right) {
+    // 2. 数组大小大于阈值时使用快排，否则使用插入排序 (PPT 第 4 页)
+    if (Left + CUTOFF <= Right) {
+        int Pivot = Median3(A, Left, Right);
+        int i = Left;
+        int j = Right - 1;
         
-        // 递归排序基准右边的子数组
-        quickSort(arr, pi + 1, high);
+        // 3. 划分策略 (Partitioning Strategy)
+        for ( ; ; ) {
+            // i 向右扫描，直到遇到大于等于 Pivot 的数（PPT 核心讨论：等于时同样停止交换）
+            while (A[++i] < Pivot) {}
+            // j 向左扫描，直到遇到小于等于 Pivot 的数
+            while (A[--j] > Pivot) {}
+            
+            if (i < j) {
+                Swap(&A[i], &A[j]); // 满足条件，原地对调
+            } else {
+                break;
+            }
+        }
+        // 将主元从隐藏位 (Right - 1) 还原归位到中间分界点 i
+        Swap(&A[i], &A[Right - 1]);
+        
+        // 递归治理左右两侧宇宙
+        QSort(A, Left, i - 1);
+        QSort(A, i + 1, Right);
+    } else {
+        InsertionSort(A + Left, Right - Left + 1);
     }
 }
 
-// 打印数组
-void printArray(int arr[], int size) {
-    for (int i = 0; i < size; i++)
-        printf("%d ", arr[i]);
-    printf("\n");
+// 统一的外部调用接口
+void QuickSort(int A[], int N) {
+    QSort(A, 0, N - 1);
 }
 
 int main() {
-    int arr[] = {10, 7, 8, 9, 1, 5};
-    int n = sizeof(arr) / sizeof(arr[0]);   
-    printf("%d",n);
+    int arr[] = {13, 81, 92, 43, 65, 31, 57, 26, 75, 0}; // PPT 第一页标准样例数据
+    int n = sizeof(arr) / sizeof(arr[0]);
     
-    printf("原始数组: \n");
-    printArray(arr, n);
+    printf("Original array:\n");
+    for (int i = 0; i < n; i++) printf("%d ", arr[i]);
+    printf("\n");
     
-    quickSort(arr, 0, n - 1);
+    QuickSort(arr, n);
     
-    printf("排序后的数组: \n");
-    printArray(arr, n);
+    printf("\nSorted array (Optimized QuickSort):\n");
+    for (int i = 0; i < n; i++) printf("%d ", arr[i]);
+    printf("\n");
     return 0;
 }
